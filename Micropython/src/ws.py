@@ -7,14 +7,11 @@ import websocket_helper
 import time
 import json
 
-SWITCH_MODE = "ap" # Change the values to "ap" or "sta" to select the operating mode
-
 AP_NAME = 'esp32_4wd_micropython'
 AP_PASSWORD = "123456789"
-
-STA_NAME = "ssid"
-STA_PASSWORD = "password"
-
+STA_NAME = "MakerStarsHall"
+STA_PASSWORD = "sunfounder"
+SWITCH_MODE = "ap" # Change the values to "ap" or "sta" to select the operating mode
 
 
 class WS_Server():
