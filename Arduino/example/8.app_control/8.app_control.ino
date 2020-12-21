@@ -3,12 +3,11 @@
 #include <WebSocketsServer.h>
 #include <ArduinoJson.h>
 
-#define NAME "ESP-4WD Car"
-#define PASSWORD "123456789"
-
-// Constants
-const char *ssid = NAME;
-const char *password = PASSWORD;
+#define AP_NAME "ESP-4WD Car"
+#define AP_PASSWORD "123456789"
+#define STA_NAME "MakerStarsHall"
+#define STA_PASSWORD "sunfounder"
+#define SWITCH_MODE "ap"
 
 ESP32car car;
 
@@ -133,31 +132,35 @@ void setup() {
 //  char temp_data[300]; 
   String stringone = "{\'Name\':\"";
   String stringtwo = "\", \'Type\':\"ESP-4WD Car\", \'Check\':\"SunFounder Controller\"}";
-  temp_send = stringone + String(NAME) + stringtwo;
+  temp_send = stringone + String(AP_NAME) + stringtwo;
   
-
   Serial.begin(115200);
-
-  // Start access point
-  WiFi.softAP(ssid, password);
-  // Print our IP address 
-  Serial.println();
-  Serial.println("AP running");
-  Serial.print("My IP address: ");
-  Serial.println(WiFi.softAPIP());
-//   Connect to access point
-//  Serial.println("Connecting");
-//  WiFi.begin("MakerStarsHall", "sunfounder");
-//  while ( WiFi.status() != WL_CONNECTED ) {
-//    delay(500);
-//    Serial.print(".");
-//  }
-//
-//  // Print our IP address
-//  Serial.println("Connected!");
-//  Serial.print("My IP address: ");
-//  Serial.println(WiFi.localIP());
-
+  if(SWITCH_MODE == "ap")
+  {
+      // Start access point
+      WiFi.softAP(AP_NAME, AP_PASSWORD);
+      // Print our IP address 
+      Serial.println();
+      Serial.println("AP running");
+      Serial.print("My IP address: ");
+      Serial.println(WiFi.softAPIP());   
+  }
+  else if(SWITCH_MODE == "sta")
+  {
+      // Connect to access point
+      Serial.println("Connecting");
+      WiFi.begin(STA_NAME, STA_PASSWORD);
+      while ( WiFi.status() != WL_CONNECTED ) {
+        delay(500);
+        Serial.print(".");
+      }
+    
+      // Print our IP address
+      Serial.println("Connected!");
+      Serial.print("My IP address: ");
+      Serial.println(WiFi.localIP());
+  }
+      
   pinMode(SPEED_PIN_LEFT, INPUT);
   attachInterrupt(SPEED_PIN_LEFT, on_left_Pin, RISING);
   pinMode(SPEED_PIN_RIGHT, INPUT);

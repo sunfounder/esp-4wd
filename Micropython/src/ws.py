@@ -7,12 +7,13 @@ import websocket_helper
 import time
 import json
 
-NAME = 'esp32_4wd_micropython'
-PASSWARD = "123456789"
+SWITCH_MODE = "ap" # Change the values to "ap" or "sta" to select the operating mode
 
-# NAME = 'MakerStarsHall'
-# PASSWARD = "sunfounder"
+AP_NAME = 'esp32_4wd_micropython'
+AP_PASSWORD = "123456789"
 
+STA_NAME = "ssid"
+STA_PASSWORD = "password"
 
 
 
@@ -25,7 +26,7 @@ class WS_Server():
     # ioctl -- <function>
     # close -- <function>
     send_dict = {
-        'Name':NAME,
+        'Name':AP_NAME,
         'Type':'ESP-4WD Car',
         'Check':'SunFounder Controller',
         }
@@ -88,19 +89,21 @@ class WS_Server():
 
     def start(self):
         # self.stop()
-        self.wlan = network.WLAN(network.AP_IF)
-        self.wlan.config(essid=NAME, authmode=4, password=PASSWARD)
-        self.wlan.active(True)  # turning on the hotspot
-        # self.wlan = network.WLAN(network.STA_IF)
-        # self.wlan.active(True)
-        # self.wlan.connect(NAME, PASSWARD)
-        # for _ in range(5):
-        #     if self.wlan.isconnected():
-        #         print('network config:', self.wlan.ifconfig())
-        #         break
-        #     time.sleep(1)
-        # if not self.wlan.isconnected():
-        #     print("wifi connected fail ")
+        if SWITCH_MODE == "ap":
+            self.wlan = network.WLAN(network.AP_IF)
+            self.wlan.config(essid=AP_NAME, authmode=4, password=AP_PASSWORD)
+            self.wlan.active(True)  # turning on the hotspot
+        elif SWITCH_MODE == "sta":
+            self.wlan = network.WLAN(network.STA_IF)
+            self.wlan.active(True)
+            self.wlan.connect(STA_NAME, STA_PASSWORD)
+            for _ in range(5):
+                if self.wlan.isconnected():
+                    print('network config:', self.wlan.ifconfig())
+                    break
+                time.sleep(1)
+            if not self.wlan.isconnected():
+                print("wifi connected fail ")
         self.setup_conn(self.accept_conn)
 
     def start_foreground(self):
