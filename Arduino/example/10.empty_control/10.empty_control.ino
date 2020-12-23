@@ -78,8 +78,7 @@ void onWebSocketEvent(uint8_t client_num,
       //Analyze and process the received data
       deserializeJson(doc_recv, payload);
       
-      //Get the data assignment JSON object ,convert it into a string and send it to app 
-      deserializeJson(doc_send, temp_send);  
+      //Get the data assignment JSON object ,convert it into a string and send it to app   
       
       serializeJson(doc_send, output);
       webSocket.sendTXT(client_num, output);     

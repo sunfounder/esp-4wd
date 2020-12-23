@@ -35,6 +35,7 @@ def main():
     while True:
         result = read()
         if result != None:
+            ws.send_dict['L_region'] = car.get_grayscale_list()
             write()
         time.sleep_ms(15)
 

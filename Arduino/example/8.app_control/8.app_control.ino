@@ -94,7 +94,6 @@ void onWebSocketEvent(uint8_t client_num,
       }
       car.move(doc_recv["K_region"], doc_recv["H_region"]);
       //Get the data assignment JSON object ,convert it into a string and send it to app 
-      deserializeJson(doc_send, temp_send);  
       doc_send["A_region"] = get_speed();  
       car.get_angle_distance();
       doc_send["D_region"][0] = car.angle_distance[0]; 
