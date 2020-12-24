@@ -18,14 +18,16 @@ WebSocketsServer webSocket = WebSocketsServer(8765);
 DynamicJsonDocument doc_send(1024);
 DynamicJsonDocument doc_recv(1024);
 
-char temp_data[300];
+char temp_recv[300];
+char temp_send[300];
+String temp_data;
 
 
 void onWebSocketEvent(uint8_t client_num,
                       WStype_t type,
                       uint8_t * payload,
                       size_t length) {
-   String output;
+   char output[300];
   // Figure out the type of WebSocket event
   switch(type) {
 
@@ -40,32 +42,48 @@ void onWebSocketEvent(uint8_t client_num,
         IPAddress ip = webSocket.remoteIP(client_num);
         Serial.printf("[%u] Connection from ", client_num);
         Serial.println(ip.toString());
-        serializeJson(doc_send, output);
-        webSocket.sendTXT(client_num, output);
+        webSocket.sendTXT(client_num, temp_data);
       }
       break;
 
     case WStype_TEXT:
-      // Print out raw message
-//      Serial.printf("[%u] Received text: %s\n", client_num, payload);
-      
-      if(strcmp((char * )payload, temp_data) != 0) 
+
+      /***RECEVICE***/
+      /*** print the message which received from controller ***/
+      if(strcmp((char * )payload, temp_recv) != 0) 
       {
-        memset(temp_data, 0, 300);
+        memset(temp_recv, 0, 300);
         Serial.printf(" Received text: %s\n", payload);
-        memcpy(temp_data, (char *)payload, strlen((char *)payload));
+        memcpy(temp_recv, (char *)payload, strlen((char *)payload));
       }
+      /***the statement which trasfer String to JSon Objection***/
+      deserializeJson(doc_recv, payload);   
+      //   coding the control function here.
+
+   
+      /***SEND***/
+      //   coding the sensor function here.
+      /***** this code is the example for you test the message which you send to controller ****/
+//       car.get_grayscale();
+//       for(int i = 0; i < 3; i++)
+//       {
+//           doc_send["L_region"][i] = car.adc_value[i];
+//       }
       
-      
-     
-      car.get_grayscale();
-      for(int i = 0; i < 3; i++)
-      {
-          doc_send["L_region"][i] = car.adc_value[i];
-      }
+      /***the statement which trasfer JSon Objection to String***/
       serializeJson(doc_send, output);
-//      Serial.println(output);
-      webSocket.sendTXT(client_num, output);     
+
+      /*** print the message which send to controller ***/
+      if(strcmp(output, temp_send) != 0) 
+      {
+        memset(temp_send, 0, 300);
+        Serial.printf(" Send text: %s\n", output);
+        memcpy(temp_send, output, strlen(output));
+      }
+      
+      /*** send message to controller ***/
+      webSocket.sendTXT(client_num, output); 
+
       break;
 
     // For everything else: do nothing
@@ -86,10 +104,8 @@ void setup() {
   // put your setup code here, to run once:
    String stringone = "{\'Name\':\"";
   String stringtwo = "\", \'Type\':\"ESP-4WD Car\", \'Check\':\"SunFounder Controller\"}";
-  String temp_data;
   temp_data = stringone + String(AP_NAME) + stringtwo;
   deserializeJson(doc_send, temp_data);
-
   Serial.begin(115200);
 
   if(SWITCH_MODE == "ap")

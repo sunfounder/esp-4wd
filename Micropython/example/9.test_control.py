@@ -5,15 +5,16 @@ import esp32_rdp as car
 
 
 
-ws = WS_Server(8765)
-speed = car.Speed(26, 25)
+ws = WS_Server(8765) # init websocket 
 temp = None
 
+# websocket send data
 def write():
     ws.write(json.dumps(ws.send_dict))
-    #print(ws.send_dict)
+    print(ws.send_dict)
     return
 
+#  websocket recevice data
 def read():
     global temp
     recv = ws.read()
@@ -35,11 +36,12 @@ def main():
     while True:
         result = read()
         if result != None:
-            ws.send_dict['L_region'] = car.get_grayscale_list()
+            # coding the control function here.
+            # coding the sensor function here.
+            ws.send_dict['L_region'] = car.get_grayscale_list() # example for test sensor date sending.
             write()
         time.sleep_ms(15)
 
-#main()
 
 if __name__ == "__main__":
     try:
