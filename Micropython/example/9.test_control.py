@@ -28,7 +28,7 @@ def write():
     ws.write(json.dumps(ws.send_dict))
     if temp_send != ws.send_dict:
         print("send_data:%s\n"%ws.send_dict)
-        temp_send = ws.send_dict
+        temp_send = ws.send_dict.copy
     return
 
 
