@@ -9,6 +9,7 @@ ws = WS_Server(8765) # init websocket
 temp = None
 temp_send = None
 
+
 #  websocket recevice data
 def read():
     global temp
@@ -18,8 +19,7 @@ def read():
     recv_data = json.loads(recv)
     if temp != recv_data:
         print("recv_data: %s\n"%recv_data)
-        temp = recv_data
-        
+        temp = recv_data        
     return recv_data
 
 # websocket send data
@@ -31,8 +31,6 @@ def write():
         temp_send = ws.send_dict.copy
     return
 
-
-
 def main():
     ws.start()
     print("start")
@@ -40,7 +38,9 @@ def main():
         result = read()
         if result != None:
             # coding the control function here.
+            
             # coding the sensor function here.
+            
             # ws.send_dict['L_region'] = car.get_grayscale_list() # example for test sensor date sending.
             write()
         time.sleep_ms(15)
