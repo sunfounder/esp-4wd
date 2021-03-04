@@ -14,8 +14,7 @@ def main():
         elif mode == 4:
             car.track_line(400,50)
 
-if __name__ == "__main__":
-    try:
-        main()
-    except:
-        car.move("stop")
+try:
+    main()
+finally:
+    car.move("stop")

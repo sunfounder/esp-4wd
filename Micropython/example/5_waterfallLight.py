@@ -23,8 +23,7 @@ def main():
             car.set_num_color(j,noColor)
             time.sleep_ms(40)
 
-if __name__ == "__main__":
-    try:
-        main()
-    except:
-        car.set_light_off()
+try:
+    main()
+finally:
+    car.set_light_off()

@@ -63,8 +63,7 @@ def main():
         time.sleep_ms(15)
 
 
-if __name__ == "__main__":
-    try:
-        main()
-    except:
-        ws.stop()
+try:
+    main()
+finally:
+    ws.stop()

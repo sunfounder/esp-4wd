@@ -12,8 +12,7 @@ def main():
     time.sleep(1)
     car.move("stop")
 
-if __name__ == "__main__":
-    try:
-        main()
-    except:
-        car.move("stop")
+try:
+    main()
+finally:
+    car.move("stop")

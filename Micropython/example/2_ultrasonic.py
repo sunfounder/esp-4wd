@@ -9,5 +9,4 @@ def main():
         print('distance:%0.2f' % distance)
         time.sleep(0.1)
 
-if __name__ == "__main__":
-    main()
+main()

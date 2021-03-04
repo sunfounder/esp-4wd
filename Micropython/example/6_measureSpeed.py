@@ -11,8 +11,7 @@ def main():
         carSpeed = speed.get_speed()
         print('distance:%d' % carSpeed)
 
-if __name__ == "__main__":
-    try:
-        main()
-    except:
-        car.move("stop")
+try:
+    main()
+finally:
+    car.move("stop")

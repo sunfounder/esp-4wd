@@ -9,5 +9,4 @@ def main():
         print('grayValue: %d %d %d' %(grayValue[0],grayValue[1],grayValue[2]))
         time.sleep(1)
 
-if __name__ == "__main__":
-    main()
+main()
