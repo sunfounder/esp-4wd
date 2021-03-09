@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>器件测试 &mdash; esp-4wd_car_kit  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> esp-4wd_car_kit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Components List.html">Components List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">esp-4wd_car_kit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>器件测试</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/器件测试(python).rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>器件测试<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>在组装ESP-4WD Car之前，你需要先对各类器件进行测试来确保它们是正常工作的，如果器件有任何问题，你可以对它们进行校准，或者联系我们更换新的器件。</p>
+<div class="section" id="id2">
+<h2>连接电源<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Connect ESP32 RDP to PC.</p>
+<a class="reference internal image-reference" href="_images/arduino_setup13.png"><img alt="_images/arduino_setup13.png" class="align-center" src="_images/arduino_setup13.png" style="width: 400px;" /></a>
+<p>用电池给ESP32 RDP供电。</p>
+<a class="reference internal image-reference" href="_images/arduino_test1.jpg"><img alt="_images/arduino_test1.jpg" class="align-center" src="_images/arduino_test1.jpg" style="width: 400px;" /></a>
+</div>
+<div class="section" id="test-the-motor">
+<h2>Test the motor<a class="headerlink" href="#test-the-motor" title="Permalink to this headline">¶</a></h2>
+<p>Finishing the wire up according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test2.png"><img alt="_images/arduino_test2.png" class="align-center" src="_images/arduino_test2.png" style="width: 500px;" /></a>
+<p>Double-click the <strong>move.py</strong> file in the MicroPython device window.
+Click the green icon at the top left to run the current script, and then
+click the red icon next to it to stop the current script.</p>
+<a class="reference internal image-reference" href="_images/python_setup16.png"><img alt="_images/python_setup16.png" class="align-center" src="_images/python_setup16.png" style="width: 450px;" /></a>
+<p>Run move.py，你会看到四个电机一直在转动，并且不断更换转动方向，最后停下来。</p>
+</div>
+<div class="section" id="test-the-ultrasonic-module">
+<h2>Test the ultrasonic module<a class="headerlink" href="#test-the-ultrasonic-module" title="Permalink to this headline">¶</a></h2>
+<p>Finishing the wire up according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test3.png"><img alt="_images/arduino_test3.png" class="align-center" src="_images/arduino_test3.png" style="width: 400px;" /></a>
+<p>There is a Shell window under Thonny, where you can view running information, error
+information and print information.</p>
+<a class="reference internal image-reference" href="_images/python_setup17.png"><img alt="_images/python_setup17.png" class="align-center" src="_images/python_setup17.png" style="width: 450px;" /></a>
+<p>Run ultrasonic.py, the Shell window under Thonny will always print the distance value read
+by the ultrasonic module.</p>
+</div>
+<div class="section" id="test-the-grayscale-sensor-module">
+<h2>Test the grayscale sensor module<a class="headerlink" href="#test-the-grayscale-sensor-module" title="Permalink to this headline">¶</a></h2>
+<p>Finishing the wire up according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test4.png"><img alt="_images/arduino_test4.png" class="align-center" src="_images/arduino_test4.png" style="width: 400px;" /></a>
+<p>Run grayValue.py, the Shell window under Thonny will always print the reading value of the
+grayscale sensor.</p>
+<p>Grayscale sensor module通常会在白色地面上检测到1100以上的数值，在黑色地面上则会检测到900以下的数值，
+在悬崖端会检测到110以下的数值。如果grayscale sensor module检测的数值不正常，你就需要对它进行校准。将grayscale sensor module放在白色地面上，用
+螺丝刀顺时针扭动模块上的旋转按钮，使其检测到的值最大，然后将Grayscale sensor module放在黑色地面上，用螺丝刀逆时针扭动
+模块上的模块上的旋转按钮，使其检测到的值最小，这样就完成了校准。</p>
+<a class="reference internal image-reference" href="_images/arduino_test4-1.png"><img alt="_images/arduino_test4-1.png" class="align-center" src="_images/arduino_test4-1.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="test-the-rgb-board">
+<h2>Test the RGB board<a class="headerlink" href="#test-the-rgb-board" title="Permalink to this headline">¶</a></h2>
+<p>Finishing the wire up according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test5.jpg"><img alt="_images/arduino_test5.jpg" class="align-center" src="_images/arduino_test5.jpg" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/arduino_test6.png"><img alt="_images/arduino_test6.png" class="align-center" src="_images/arduino_test6.png" style="width: 400px;" /></a>
+<p>Run flashingLight.py, the RGB light under the car flashes every 0.5 seconds and
+changes color every time it flashes.</p>
+</div>
+<div class="section" id="test-the-servo">
+<h2>Test the servo<a class="headerlink" href="#test-the-servo" title="Permalink to this headline">¶</a></h2>
+<p>Finishing the wire up according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test7.png"><img alt="_images/arduino_test7.png" class="align-center" src="_images/arduino_test7.png" style="width: 400px;" /></a>
+<p>Run servo.py, 舵机将会先左转30度，然后右转30度，最后回到0度位置。保留这个0度位置不变，然后进行对ESP-4WD Car的组装。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
