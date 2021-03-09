@@ -8,5 +8,5 @@
 .. toctree::
   :maxdepth: 2
 
-  Code Control
-  APP Control
+  code_control_python
+  app_control_python

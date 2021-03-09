@@ -8,6 +8,6 @@
 .. toctree::
   :maxdepth: 2
 
-  Code Control
-  APP Control
+  code_control_arduino
+  app_control_arduino
 
