@@ -27,7 +27,7 @@ Finishing the wire up according to the diagram.
   :width: 500
   :align: center
 
-Double-click the ``1_move.py`` file in the MicroPython device window.
+Double-click the ``move.py`` file in the MicroPython device window.
 Click the green icon at the top left to run the current script, and then 
 click the red icon next to it to stop the current script.
 
@@ -53,7 +53,7 @@ information and print information.
   :width: 450
   :align: center
 
-Run ``2_ultrasonic.py``, the Shell window under Thonny will always print the distance value read
+Run ``ultrasonic.py``, the Shell window under Thonny will always print the distance value read
 by the ultrasonic module.
 
 Test the Grayscale Sensor Module
@@ -65,7 +65,7 @@ Finishing the wire up according to the diagram.
   :width: 400
   :align: center
 
-Run ``3_grayValue.py``, the Shell window under Thonny will always print the reading value of the
+Run ``grayValue.py``, the Shell window under Thonny will always print the reading value of the
 grayscale sensor.
 
 When using the grayscale sensor module, the probe should be about 5 mm from the ground.
@@ -96,7 +96,7 @@ Finishing the wire up according to the diagram.
   :width: 400
   :align: center
 
-Run ``4_flashingLight.py``, the RGB light under the car flashes every 0.5 seconds and
+Run ``flashingLight.py``, the RGB light under the car flashes every 0.5 seconds and
 changes color every time it flashes.
 
 Test the Servo
