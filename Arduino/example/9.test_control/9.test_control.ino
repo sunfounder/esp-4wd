@@ -3,7 +3,7 @@
 #include <WebSocketsServer.h>
 #include <ArduinoJson.h>
 
-#define AP_NAME "ESP-4WD Car"
+#define NAME "ESP-4WD Car"
 #define AP_PASSWORD "123456789"
 #define STA_NAME "MakerStarsHall"
 #define STA_PASSWORD "sunfounder"
@@ -104,14 +104,14 @@ void setup() {
   // put your setup code here, to run once:
    String stringone = "{\'Name\':\"";
   String stringtwo = "\", \'Type\':\"ESP-4WD Car\", \'Check\':\"SunFounder Controller\"}";
-  temp_data = stringone + String(AP_NAME) + stringtwo;
+  temp_data = stringone + String(NAME) + stringtwo;
   deserializeJson(doc_send, temp_data);
   Serial.begin(115200);
 
   if(SWITCH_MODE == "ap")
   {
       // Start access point
-      WiFi.softAP(AP_NAME, AP_PASSWORD);
+      WiFi.softAP(NAME, AP_PASSWORD);
       // Print our IP address 
       Serial.println();
       Serial.println("AP running");

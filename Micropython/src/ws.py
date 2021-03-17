@@ -7,7 +7,7 @@ import websocket_helper
 import time
 import json
 
-AP_NAME = 'esp32_4wd_micropython'
+NAME = 'ESP-4WD Car'
 AP_PASSWORD = "123456789"
 STA_NAME = "MakerStarsHall"
 STA_PASSWORD = "sunfounder"
@@ -23,7 +23,7 @@ class WS_Server():
     # ioctl -- <function>
     # close -- <function>
     send_dict = {
-        'Name':AP_NAME,
+        'Name':NAME,
         'Type':'ESP-4WD Car',
         'Check':'SunFounder Controller',
         }
@@ -88,7 +88,7 @@ class WS_Server():
         # self.stop()
         if SWITCH_MODE == "ap":
             self.wlan = network.WLAN(network.AP_IF)
-            self.wlan.config(essid=AP_NAME, authmode=4, password=AP_PASSWORD)
+            self.wlan.config(essid=NAME, authmode=4, password=AP_PASSWORD)
             self.wlan.active(True)  # turning on the hotspot
         elif SWITCH_MODE == "sta":
             self.wlan = network.WLAN(network.STA_IF)
