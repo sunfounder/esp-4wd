@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>器件测试 &mdash; esp-4wd_car_kit  documentation</title>
+  <title>Component Testing by Python &mdash; esp-4wd_car_kit  documentation</title>
   
 
   
@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Hardware Assembling" href="hardware_assembly_python.html" />
-    <link rel="prev" title="软件配置和安装" href="config_and_installation_python.html" /> 
+    <link rel="prev" title="Setup Your Python" href="config_and_installation_python.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,18 +89,18 @@
 <li class="toctree-l1"><a class="reference internal" href="Components List.html">Components List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="For Arduino User.html">For Arduino User</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="For Python User.html">For Python User</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="config_and_installation_python.html">软件配置和安装</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">器件测试</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">连接电源</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#test-the-motor">Test the motor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#test-the-ultrasonic-module">Test the ultrasonic module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#test-the-grayscale-sensor-module">Test the grayscale sensor module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#test-the-rgb-board">Test the RGB board</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#test-the-servo">Test the servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_and_installation_python.html">Setup Your Python</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Component Testing by Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#power-to-esp32-rdp">Power to ESP32 RDP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-motor">Test the Motor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-ultrasonic-module">Test the Ultrasonic Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-grayscale-sensor-module">Test the Grayscale Sensor Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-rgb-board">Test the RGB Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-servo">Test the Servo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="hardware_assembly_python.html">Hardware Assembling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="play_python.html">小车控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="play_python.html">Play the car with Python</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
@@ -154,7 +154,7 @@
         
           <li><a href="For Python User.html">For Python User</a> &raquo;</li>
         
-      <li>器件测试</li>
+      <li>Component Testing by Python</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -173,61 +173,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
-<h1>器件测试<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>在组装ESP-4WD Car之前，你需要先对各类器件进行测试来确保它们是正常工作的，如果器件有任何问题，你可以对它们进行校准，或者联系我们更换新的器件。</p>
-<div class="section" id="id2">
-<h2>连接电源<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="component-testing-by-python">
+<h1>Component Testing by Python<a class="headerlink" href="#component-testing-by-python" title="Permalink to this headline">¶</a></h1>
+<p>Before assembling the ESP-4WD Car, you need to test each device to make sure they are working properly, if there is any problem with the device, please contact us.</p>
+<div class="section" id="power-to-esp32-rdp">
+<h2>Power to ESP32 RDP<a class="headerlink" href="#power-to-esp32-rdp" title="Permalink to this headline">¶</a></h2>
 <p>Connect ESP32 RDP to PC.</p>
 <a class="reference internal image-reference" href="_images/arduino_setup13.png"><img alt="_images/arduino_setup13.png" class="align-center" src="_images/arduino_setup13.png" style="width: 400px;" /></a>
-<p>用电池给ESP32 RDP供电。</p>
+<p>Powering ESP32 RDP with batteries.</p>
 <a class="reference internal image-reference" href="_images/arduino_test1.jpg"><img alt="_images/arduino_test1.jpg" class="align-center" src="_images/arduino_test1.jpg" style="width: 400px;" /></a>
 </div>
 <div class="section" id="test-the-motor">
-<h2>Test the motor<a class="headerlink" href="#test-the-motor" title="Permalink to this headline">¶</a></h2>
+<h2>Test the Motor<a class="headerlink" href="#test-the-motor" title="Permalink to this headline">¶</a></h2>
 <p>Finishing the wire up according to the diagram.</p>
 <a class="reference internal image-reference" href="_images/arduino_test2.png"><img alt="_images/arduino_test2.png" class="align-center" src="_images/arduino_test2.png" style="width: 500px;" /></a>
-<p>Double-click the <strong>move.py</strong> file in the MicroPython device window.
+<p>Double-click the <code class="docutils literal notranslate"><span class="pre">1_move.py</span></code> file in the MicroPython device window.
 Click the green icon at the top left to run the current script, and then
 click the red icon next to it to stop the current script.</p>
 <a class="reference internal image-reference" href="_images/python_setup16.png"><img alt="_images/python_setup16.png" class="align-center" src="_images/python_setup16.png" style="width: 450px;" /></a>
-<p>Run move.py，你会看到四个电机一直在转动，并且不断更换转动方向，最后停下来。</p>
+<p>After running the code, you will see the four motors turning and changing the direction of rotation back and forth, and finally stopping.</p>
 </div>
 <div class="section" id="test-the-ultrasonic-module">
-<h2>Test the ultrasonic module<a class="headerlink" href="#test-the-ultrasonic-module" title="Permalink to this headline">¶</a></h2>
+<h2>Test the Ultrasonic Module<a class="headerlink" href="#test-the-ultrasonic-module" title="Permalink to this headline">¶</a></h2>
 <p>Finishing the wire up according to the diagram.</p>
 <a class="reference internal image-reference" href="_images/arduino_test3.png"><img alt="_images/arduino_test3.png" class="align-center" src="_images/arduino_test3.png" style="width: 400px;" /></a>
 <p>There is a Shell window under Thonny, where you can view running information, error
 information and print information.</p>
 <a class="reference internal image-reference" href="_images/python_setup17.png"><img alt="_images/python_setup17.png" class="align-center" src="_images/python_setup17.png" style="width: 450px;" /></a>
-<p>Run ultrasonic.py, the Shell window under Thonny will always print the distance value read
+<p>Run <code class="docutils literal notranslate"><span class="pre">2_ultrasonic.py</span></code>, the Shell window under Thonny will always print the distance value read
 by the ultrasonic module.</p>
 </div>
 <div class="section" id="test-the-grayscale-sensor-module">
-<h2>Test the grayscale sensor module<a class="headerlink" href="#test-the-grayscale-sensor-module" title="Permalink to this headline">¶</a></h2>
+<h2>Test the Grayscale Sensor Module<a class="headerlink" href="#test-the-grayscale-sensor-module" title="Permalink to this headline">¶</a></h2>
 <p>Finishing the wire up according to the diagram.</p>
 <a class="reference internal image-reference" href="_images/arduino_test4.png"><img alt="_images/arduino_test4.png" class="align-center" src="_images/arduino_test4.png" style="width: 400px;" /></a>
-<p>Run grayValue.py, the Shell window under Thonny will always print the reading value of the
+<p>Run <code class="docutils literal notranslate"><span class="pre">3_grayValue.py</span></code>, the Shell window under Thonny will always print the reading value of the
 grayscale sensor.</p>
-<p>Grayscale sensor module通常会在白色地面上检测到1100以上的数值，在黑色地面上则会检测到900以下的数值，
-在悬崖端会检测到110以下的数值。如果grayscale sensor module检测的数值不正常，你就需要对它进行校准。将grayscale sensor module放在白色地面上，用
-螺丝刀顺时针扭动模块上的旋转按钮，使其检测到的值最大，然后将Grayscale sensor module放在黑色地面上，用螺丝刀逆时针扭动
-模块上的模块上的旋转按钮，使其检测到的值最小，这样就完成了校准。</p>
+<p>When using the grayscale sensor module, the probe should be about 5 mm from the ground.</p>
+<p>Normally, it will detect a value above 1100 on white ground.
+On black ground, it will detect values below 900.
+On a cliff, it will detect a value below 110. (If the reading is 0, it means that the probe does not detect the ground.)</p>
+<p>If the grayscale sensor module does not detect normal values, you will need to calibrate it.</p>
+<p>Hover it over a white ground and twist the potentiometer clockwise so that the reading is greater than 1100 (usually around 1200). Then suspend it on a dark ground and twist the potentiometer counterclockwise so that it is less than 900 (usually between 300 and 600). Repeat this several times to get it to the maximum difference in both cases.</p>
 <a class="reference internal image-reference" href="_images/arduino_test4-1.png"><img alt="_images/arduino_test4-1.png" class="align-center" src="_images/arduino_test4-1.png" style="width: 400px;" /></a>
 </div>
 <div class="section" id="test-the-rgb-board">
-<h2>Test the RGB board<a class="headerlink" href="#test-the-rgb-board" title="Permalink to this headline">¶</a></h2>
+<h2>Test the RGB Board<a class="headerlink" href="#test-the-rgb-board" title="Permalink to this headline">¶</a></h2>
 <p>Finishing the wire up according to the diagram.</p>
 <a class="reference internal image-reference" href="_images/arduino_test5.jpg"><img alt="_images/arduino_test5.jpg" class="align-center" src="_images/arduino_test5.jpg" style="width: 400px;" /></a>
 <a class="reference internal image-reference" href="_images/arduino_test6.png"><img alt="_images/arduino_test6.png" class="align-center" src="_images/arduino_test6.png" style="width: 400px;" /></a>
-<p>Run flashingLight.py, the RGB light under the car flashes every 0.5 seconds and
+<p>Run <code class="docutils literal notranslate"><span class="pre">4_flashingLight.py</span></code>, the RGB light under the car flashes every 0.5 seconds and
 changes color every time it flashes.</p>
 </div>
 <div class="section" id="test-the-servo">
-<h2>Test the servo<a class="headerlink" href="#test-the-servo" title="Permalink to this headline">¶</a></h2>
+<h2>Test the Servo<a class="headerlink" href="#test-the-servo" title="Permalink to this headline">¶</a></h2>
 <p>Finishing the wire up according to the diagram.</p>
 <a class="reference internal image-reference" href="_images/arduino_test7.png"><img alt="_images/arduino_test7.png" class="align-center" src="_images/arduino_test7.png" style="width: 400px;" /></a>
-<p>Run servo.py, 舵机将会先左转30度，然后右转30度，最后回到0度位置。保留这个0度位置不变，然后进行对ESP-4WD Car的组装。</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">servo.py</span></code>. The servo will first turn 30 degrees left, then 30 degrees right, and finally return to 0 degrees.</p>
 </div>
 </div>
 
@@ -238,7 +240,7 @@ changes color every time it flashes.</p>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="hardware_assembly_python.html" class="btn btn-neutral float-right" title="Hardware Assembling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="config_and_installation_python.html" class="btn btn-neutral float-left" title="软件配置和安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="config_and_installation_python.html" class="btn btn-neutral float-left" title="Setup Your Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

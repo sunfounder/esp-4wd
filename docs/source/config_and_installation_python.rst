@@ -1,25 +1,14 @@
-软件配置和安装
-===============
+Setup Your Python
+============================
 
 Before you start using the kit, you need to complete the following steps.
 
-.. toctree::
-    :maxdepth: 1
-
-    Download the Files
-    Install Python3
-    Download the burning firmware tool
-    Download the firmware
-    Install driver
-    Erase and burn
-    Download Thonny
-    Upload file
 
 Download the Files
 --------------------
 
 Go to `https://github.com/sunfounder/esp-4wd <https://github.com/sunfounder/esp-4wd>`_
-download the ZIP files.Unzip the downloaded ZIP file and you will get the esp-4wd (esp-4wd-master) folder.
+download the ZIP files. Unzip the downloaded ZIP file and you will get the esp-4wd (esp-4wd-master) folder.
 
 .. image:: img/arduino_setup2.png
   :width: 300
@@ -51,7 +40,7 @@ Then click Next, check “Add Python to environment variables” in Advanced Opt
 Download the burning firmware tool
 ------------------------------------
 
-Open a Command Prompt(For windows users) or terminal(For Linux users).
+Open a Command Prompt (For windows users) or terminal (For Linux users).
 
 .. image:: img/python_setup4.png
   :width: 350
@@ -193,8 +182,8 @@ Click View -> Files.
   :width: 300
   :align: center
 
-In the **This computer** area of the Files window on the left, find esp32_rdp.py files
-and ws.py files (under the esp-4wd -> Micropython -> src path). Right-click on these
+In the **This computer** area of the Files window on the left, find **esp32_rdp.py** files
+and **ws.py** files (under the esp-4wd -> Micropython -> src path). Right-click on these
 two python files and choose **Upload to /**.
 
 .. image:: img/python_setup13.png
@@ -206,7 +195,7 @@ Upload example files
 
 In the This computer window of the Files on the left, find 7 example files (under the
 esp-4wd -> Micropython -> example path). Right-click on these nine python files and
-choose Upload to /.
+choose **Upload to /**.
 
 .. image:: img/python_setup14.png
   :width: 300

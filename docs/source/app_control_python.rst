@@ -1,23 +1,12 @@
 APP control
 ============
 
-In this chapter,你将学习使用Sunfounder Controller这款遥控器软件，并在Sunfounder Controller上diy一个遥控器来
-控制小车。
-
-.. toctree::
-  :maxdepth: 2
-
-  Install Sunfounder Controller
-  About Sunfounder Controller
-  Establish communication
-  APP操作
-  DIY遥控器
+In this chapter, you will learn to use a APP - Sunfounder Controller to control the car.
 
 Install Sunfounder Controller
 -------------------------------
 
-Open App Store (iOS/Mac OS X system) or Play Store (Android/Windows/Linux
-system), then search and download Sunfounder Controller.
+Open App Store (iOS/Mac OS X system) or Play Store (Android/Windows/Linux system), then search and download Sunfounder Controller.
 
 .. image:: img/arduino_app1.png
   :width: 500
@@ -42,7 +31,7 @@ Click the middle button to add a new controller.
   :align: center
 
 Sunfounder Controller is a platform that can add custom remote control handles. It
-reserves many control interfaces. There are a total of 17 areas from A to Q. Each area
+reserves many widget interfaces. There are a total of 17 areas from A to Q. Each area
 has selectable widgets.
 
 .. image:: img/arduino_app4.png
@@ -113,10 +102,10 @@ In addition to the code control method, we also provide the APP control method.
 You can open Sunfounder Controller on mobile phones, tablets and other devices,
 and then make a controller to control ESP-4WD Car.
 
-运行代码
-^^^^^^^^^
+Run the code
+^^^^^^^^^^^^^^
 
-Open the ws.py file in the MicroPython device.
+Open the ``ws.py`` file in the MicroPython device.
 
 .. image:: img/python_app1.png
   :width: 180
@@ -130,7 +119,7 @@ and ESP32 RDP: One is AP mode, the other is STA mode. We can switch the
 communication mode by modifying the code of ws.py.
 
 If you want to use AP mode, you need to connect Sunfounder Contorller to the hotspot released by ESP32 RDP. 
-Move the code to line 10, please set SSID and PSK here.（代码中的NAME既是SSID，同时也是小车的名字） If you have more than one EPS-4WD Cars, you need to 
+Move the code to line 10, please set SSID and PSK here. If you have more than one EPS-4WD Cars, you need to 
 set different NAMEs for them to avoid a wrong connection. In addition, you need to set a password of more
 than 8 digits.
 
@@ -139,7 +128,7 @@ than 8 digits.
     NAME = 'ESP-4WD Car'
     AP_PASSWORD = "123456789"
 
-Then modify the content of line 10 and define the SWITCH_MODE variable as "ap".
+Then modify the content of line 10 and define the ``SWITCH_MODE`` variable as "ap".
 
 .. code-block:: python
 
@@ -153,19 +142,19 @@ network.
   :width: 400
   :align: center
 
-打开Sunfounder Controller，点击右上方的连接图标。
+Open Sunfounder Controller and click the Connect icon on the top right.
 
 .. image:: img/arduino_app_new1.png
   :width: 300
   :align: center
 
-连接成功会出现提示框。
+A prompt box will appear if the connection is successful.
 
 .. image:: img/arduino_app_new2.png
   :width: 400
   :align: center
 
-并且在sunfounder的界面上会显示小车的名字。
+And the name of the car will be displayed on APP.
 
 .. image:: img/arduino_app_new3.png
   :width: 300
@@ -184,48 +173,47 @@ device should connect to this wifi.
     STA_NAME = "MakerStarsHall"
     STA_PASSWORD = "sunfounder"
 
-Then modify the content of line 14 and define the SWITCH_MODE variable as "sta".
+Then modify the content of line 14 and define the ``SWITCH_MODE`` variable as "sta".
 
 .. code-block:: python
 
     SWITCH_MODE = "sta"
 
-After downloading the code, ESP32 RDP will automatically connect to the wifi network
-, and at the same time take out your electronic device, open the WLAN management interface 
+After downloading the code, ESP32 RDP will automatically connect to the wifi network, and at the same time take out your electronic device, open the WLAN management interface 
 and connect to this wifi network.
 
 .. image:: img/arduino_app13.png
   :width: 400
   :align: center
 
-打开Sunfounder Controller，点击右上方的连接图标。
+Open Sunfounder Controller and click the Connect icon on the top right.
 
 .. image:: img/arduino_app_new1.png
   :width: 300
   :align: center
 
-在弹出的确认框中找到小车名字，点击它。
+Find the car name in the pop-up window and click on it.
 
 .. image:: img/arduino_app_new4.png
   :width: 450
   :align: center
 
-连接成功后，在sunfounder的界面上会显示小车的名字。
+After connecting, the name of the car will be displayed on APP.
 
 .. image:: img/arduino_app_new3.png
   :width: 300
   :align: center
 
-APP操作
---------
+APP Operation
+-------------------------
 
 Download this code, and then using any of the above methods to establish
 communication.
 
-添加按键
-^^^^^^^^^
+Add Widget
+^^^^^^^^^^^^
 
-Open Sunfounder Controller, and then 新建 an empty controller.
+Open Sunfounder Controller, and then create an empty controller.
 
 .. image:: img/arduino_app3.png
   :width: 450
@@ -257,26 +245,26 @@ Widget M is used to control the on and off of the RGB board.
   :width: 450
   :align: center
 
-DIY遥控器
-----------
+DIY Remote Control
+-------------------------
 
-如果你想要DIY一个新的遥控器，你需要了解ESP32 RDP和Sunfounder Controller之间的通信过程。Open the 
-test_control.py file. 你将通过这个代码来了解它们之间的通信。
+If you want to DIY a new remote control, you need to understand the communication process between the ESP32 RDP and the Sunfounder Controller. 
+Open the ``test_control.py file`` . You will go through this code to see how they communicate with each other.
 
 Program framework
 ^^^^^^^^^^^^^^^^^^^
 
 First, let us understand the general operating framework of the program.
 
-Turn the code to line 34. In the main() function, we have written the basic
+Turn the code to line 34. In the ``main()`` function, we have written the basic
 implementation code for build a controller.
 
-ws.start(): Establish communication between ESP-4WD RDP and Sunfounder
+``ws.start()`` : Establish communication between ESP-4WD RDP and Sunfounder
 Controller.
 
-result = read(): Read the received data and store it in the result variable.
+``result = read()`` : Read the received data and store it in the result variable.
 
-write()：Send sensor data to Sunfounder Controller.
+``write()`` ：Send sensor data to Sunfounder Controller.
 
 .. code-block:: python
 
@@ -294,13 +282,12 @@ write()：Send sensor data to Sunfounder Controller.
                 write()
             time.sleep_ms(15)
 
-Open the ws.py file, turn the code to line 87, in the start() function, we switch the
-communication mode by judging the value of SWITCH_MODE.
+Open the ws.py file, turn the code to line 87, in the ``start()`` function, we switch the
+communication mode by judging the value of ``SWITCH_MODE`` .
 
 .. code-block:: python
 
     def start(self):
-        # self.stop()
         if SWITCH_MODE == "ap":
             self.wlan = network.WLAN(network.AP_IF)
             self.wlan.config(essid=AP_NAME, authmode=4, password=AP_PASSWORD)
@@ -310,16 +297,15 @@ communication mode by judging the value of SWITCH_MODE.
             self.wlan.active(True)
             self.wlan.connect(STA_NAME, STA_PASSWORD)
 
-接收过程
-^^^^^^^^^
+Receiving
+^^^^^^^^^^^^^^^^^
 
-在ESP32 RDP会与Sunfounder Controller的通信过程会产生数据交互，ESP32 RDP既会接收来自Sunfounder Controller的数据，
-也会将自身的传感器数据发送给Sunfounder Controller。所以我们先来了解一下ESP32 RDP从Sunfounder Controller接收了
-哪些数据。
+The ESP32 RDP receives data from the Sunfounder Controller and sends its own sensor data to the Sunfounder Controller.
+Let's find out what data ESP32 RDP receives from Sunfounder Controller.
 
-**Step 1:创建遥控器**
+**Step 1: Create a remote control**
 
-Run the test_control.py file, re-establish communication, and then open Sunfounder Controller to create 
+Run the ``test_control.py`` file, re-establish communication, and then open Sunfounder Controller to create 
 a new controller. We add a slider in the H area and a cross-shaped steering wheel in the K area. After
 adding, click the icon in the upper right corner to save.
 
@@ -327,9 +313,9 @@ adding, click the icon in the upper right corner to save.
   :width: 450
   :align: center
 
-**Step 2:小车接收控件的值**
+**Step 2: Received values**
 
-Turn the code to line 14, in the read() function, we realized the receiving and printing
+Turn the code to line 14, in the ``read()`` function, we realized the receiving and printing
 of the data sent by the Sunfounder Controller. The function of the temp variable is to
 prevent repeated printing of data.
 
@@ -346,21 +332,21 @@ prevent repeated printing of data.
             temp = recv_data        
         return recv_data
 
-Receive the Json object sent by Sunfounder Controller through the ws.read()
-function and store it in the recv variable.
+Receive the Json object sent by Sunfounder Controller through the ``ws.read()``
+function and store it in the ``recv`` variable.
 
 .. code-block:: python
 
     recv = ws.read()
 
-Parse recv variable (Json object format) into recv_data dictionary through the
-json.loads( ) function.
+Parse ``recv`` variable (Json object format) into ``recv_data`` dictionary through the
+``json.loads( )`` function.
 
 .. code-block:: python
 
     recv_data = json.loads(recv)
 
-Print recv_data variable.
+Print ``recv_data`` variable.
 
 .. code-block:: python
 
@@ -379,7 +365,7 @@ control is the string "stop", and the initial data of H widget is the int value 
   :width: 450
   :align: center
 
-按住K区域的cross-shaped steering wheel的不同方向键，并且滑动H区域的slider。
+Press the arrow keys of the cross-shaped steering wheel in the K area and slide the slider in the H area.
 
 .. image:: img/arduino_app19.png
   :width: 450
@@ -393,14 +379,14 @@ wheel widget sends a string of data ("forward", "backward", "left", "right") to 
   :width: 450
   :align: center
     
-**Step 3:小车响应**
+**Step 3: Response**
 
-当ESP-4WD Car接收到来自Sunfounder Controller不同控件的数据时，它需要做出相应的响应。
+When ESP-4WD Car receives data from different controls of Sunfounder Controller, it needs to respond accordingly.
 Let’s write a piece of code that uses the widgets on the Sunfounder Controller 
 to control the movement of the car. The K widget(cross-shaped steering wheel) controls
 the direction of the car, and the H widget(slider) controls the speed of the car.
 
-Turn the code to line 43，我们将以下代码添加在这一行里。（有部分被注释的内容未展示，请不要将它们删除。）
+Turn the code to line 43, we add the following code in this line.
 
 .. code-block:: python
 
@@ -415,20 +401,20 @@ Turn the code to line 43，我们将以下代码添加在这一行里。（有�
                 write()
             time.sleep_ms(15)
 
-Through the read() function, you can receive the data sent by Sunfounder
+Through the ``read()`` function, you can receive the data sent by Sunfounder
 Controller and store it in the result dictionary.
 
 .. code-block:: python
 
     result = read()
 
-The value of doc_recv["K_region"] is the string data ("forward", "backward","left",
+The value of ``doc_recv["K_region"]`` is the string data ("forward", "backward","left",
 "right") sent by the K widget (cross-shaped steering wheel), the same as the value of
-doc_recv["H_region"] is the int data sent by H widget (slide) (range: 0-100).
+``doc_recv["H_region"]`` is the int data sent by H widget (slide) (range: 0-100).
 
-Pass doc_recv["K_region"] as the first parameter to the car.move() function to control
-the direction of the ESP-4WD Car. Pass doc_recv["H_region"] as the second parameter
-to the car.move() function to control the speed of ESP-4WD Car.
+Pass ``doc_recv["K_region"]`` as the first parameter to the ``car.move()`` function to control
+the direction of the ESP-4WD Car. Pass ``doc_recv["H_region"]`` as the second parameter
+to the ``car.move()`` function to control the speed of ESP-4WD Car.
 
 .. code-block:: python
 
@@ -443,15 +429,15 @@ The cross-shaped steering wheel in the K area can control the direction of the E
   :width: 250
   :align: center
 
-发送过程
+Sending
 ^^^^^^^^^
 
-我们再来了解一下ESP32 RDP是如何将自身的传感器数据发送给Sunfounder Controller。
+Let's take a closer look at how the ESP32 RDP sends its own sensor data to the Sunfounder Controller.
 
-**Step 1:创建遥控器**
+**Step 1: Create a remote control**
 
 Open the **ws.py** file and turn the code to line 25. Here, the equipment information and proofreading 
-information of ESP-4WD Car are stored in the send_dict dictionary.（有部分被注释的内容未展示，请不要将它们删除。）
+information of ESP-4WD Car are stored in the ``send_dict`` dictionary.
 
 .. code-block:: python
 
@@ -462,45 +448,45 @@ information of ESP-4WD Car are stored in the send_dict dictionary.（有部分�
         }
 
 Open the **test_control.py** file and turn the code to line 44, delete the comment symbol for this code. 
-Obtain the grayscale sensor data through the car.get_grayscale_list() function and store it in the
-ws.send_dict dictionary with the key'L_region'.
-
-.. code-block:: c
-    :emphasize-lines:7
-
-    def main():
-        ws.start()
-        print("start")
-        while True:
-            result = read()
-            if result != None:                
-                ws.send_dict['L_region'] = car.get_grayscale_list()
-                write()
-            time.sleep_ms(15)
-
-Turn the code to line 44, through the write() function, we send sensor data to the Sunfounder Controller, 
-where the temp_send variable is used to prevent repeated printing of data.
+Obtain the grayscale sensor data through the ``car.get_grayscale_list()`` function and store it in the
+``ws.send_dict`` dictionary with the key 'L_region'.
 
 .. code-block:: python
-    :emphasize-lines:3,5
+  :emphasize-lines: 7
 
-    def write():
-        global temp_send
-        ws.write(json.dumps(ws.send_dict))
-        if temp_send != ws.send_dict:
-            print("send_data:%s\n"%ws.send_dict)
-            temp_send = ws.send_dict.copy
-        return
+  def main():
+      ws.start()
+      print("start")
+      while True:
+          result = read()
+          if result != None:                
+              ws.send_dict['L_region'] = car.get_grayscale_list()
+              write()
+          time.sleep_ms(15)
 
-我们来解释一下这段代码。First, use the json.dumps() function to convert the ws.send_dict dictionary into
-a Json object, and then use the ws.write() function to send the Json object storing the
+Turn the code to line 44, through the ``write()`` function, we send sensor data to the Sunfounder Controller, 
+where the ``temp_send`` variable is used to prevent repeated printing of data.
+
+.. code-block:: python
+  :emphasize-lines: 3,5
+
+  def write():
+      global temp_send
+      ws.write(json.dumps(ws.send_dict))
+      if temp_send != ws.send_dict:
+          print("send_data:%s\n"%ws.send_dict)
+          temp_send = ws.send_dict.copy
+      return
+
+First, use the ``json.dumps()`` function to convert the ``ws.send_dict`` dictionary into
+a Json object, and then use the ``ws.write()`` function to send the ``Json`` object storing the
 sensor data to the Sunfounder Controller.
 
 .. code-block:: python
 
     ws.write(json.dumps(ws.send_dict))
 
-然后Print the value of the ws.send_dict dictionary.
+Print the value of the ``ws.send_dict`` dictionary.
 
 .. code-block:: python
 
@@ -516,42 +502,41 @@ sensor to the Sunfounder Controller.
   :width: 450
   :align: center
 
-**Step 3:小车响应**
+**Step 3: Response**
 
 Let's write a piece of code that display the sensor data of ESP-4WD RDP on the
-widget of Sunfounder Controller.Widget D (grayscale detection tool)将会根据检测到的灰度值显示地面情况。
+widget of Sunfounder Controller. Widget D (grayscale detection tool) will show you the grayscale of the ground.
 
-Turn the code to line 34, 我们来重新解释一下main()函数的内容。
+Turn the code to line 34, Let's re-explain the content of the ``main()`` event. 
 
 .. code-block:: python
-    :emphasize-lines:6,7
+  :emphasize-lines: 6,7
 
-    def main():
-        ws.start()
-        print("start")
-        while True:
-            result = read()
-            if result != None:               
-                ws.send_dict['L_region'] = car.get_grayscale_list()
-                write()
-            time.sleep_ms(15)
+  def main():
+      ws.start()
+      print("start")
+      while True:
+          result = read()
+          if result != None:               
+              ws.send_dict['L_region'] = car.get_grayscale_list()
+              write()
+          time.sleep_ms(15)
 
-通过car.get_grayscale_list()函数，我们可以获取储存着灰度传感器检测值的列表， 
-并将列表里的内容赋值给doc_send["L_region"]。
+By ``car.get_grayscale_list()`` function, we can get the list of grayscale sensor detection values and assign them to ``ws.send_dict['L_region']``.
 
 .. code-block:: python
 
     ws.send_dict['L_region'] = car.get_grayscale_list()
 
 Send sensor data, device information and proofreading information of the ESP-4WD RDP 
-to Sunfounder Controller through write() function.
+to Sunfounder Controller through ``write()`` function.
 
 .. code-block:: python
 
     write()
 
-回到遥控器界面，Widget D(grayscale detection tool)正在显示当前地面情况，如果想要知道更多关于控件的信息，请回到
-Widget List查看。
+Back in the remote control interface, Widget D (grayscale detection tool) is showing the current ground conditions, if you want to know more about the controls, please go back to
+Widget List to see.
 
 .. image:: img/arduino_app23.png
   :width: 250

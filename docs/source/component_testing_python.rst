@@ -1,10 +1,10 @@
-器件测试
-=========
+Component Testing by Python
+=======================================
 
-在组装ESP-4WD Car之前，你需要先对各类器件进行测试来确保它们是正常工作的，如果器件有任何问题，你可以对它们进行校准，或者联系我们更换新的器件。
+Before assembling the ESP-4WD Car, you need to test each device to make sure they are working properly, if there is any problem with the device, please contact us.
 
-连接电源
----------
+Power to ESP32 RDP
+---------------------------
 
 Connect ESP32 RDP to PC.
 
@@ -12,13 +12,13 @@ Connect ESP32 RDP to PC.
   :width: 400
   :align: center
 
-用电池给ESP32 RDP供电。
+Powering ESP32 RDP with batteries.
 
 .. image:: img/arduino_test1.jpg
   :width: 400
   :align: center
 
-Test the motor
+Test the Motor
 -----------------
 
 Finishing the wire up according to the diagram.
@@ -27,7 +27,7 @@ Finishing the wire up according to the diagram.
   :width: 500
   :align: center
 
-Double-click the **move.py** file in the MicroPython device window.
+Double-click the ``move.py`` file in the MicroPython device window.
 Click the green icon at the top left to run the current script, and then 
 click the red icon next to it to stop the current script.
 
@@ -35,9 +35,9 @@ click the red icon next to it to stop the current script.
   :width: 450
   :align: center
 
-Run move.py，你会看到四个电机一直在转动，并且不断更换转动方向，最后停下来。
+After running the code, you will see the four motors turning and changing the direction of rotation back and forth, and finally stopping.
 
-Test the ultrasonic module
+Test the Ultrasonic Module
 ---------------------------
 
 Finishing the wire up according to the diagram.
@@ -53,10 +53,10 @@ information and print information.
   :width: 450
   :align: center
 
-Run ultrasonic.py, the Shell window under Thonny will always print the distance value read
+Run ``ultrasonic.py``, the Shell window under Thonny will always print the distance value read
 by the ultrasonic module.
 
-Test the grayscale sensor module
+Test the Grayscale Sensor Module
 ---------------------------------
 
 Finishing the wire up according to the diagram.
@@ -65,19 +65,25 @@ Finishing the wire up according to the diagram.
   :width: 400
   :align: center
 
-Run grayValue.py, the Shell window under Thonny will always print the reading value of the
+Run ``grayValue.py``, the Shell window under Thonny will always print the reading value of the
 grayscale sensor.
 
-Grayscale sensor module通常会在白色地面上检测到1100以上的数值，在黑色地面上则会检测到900以下的数值，
-在悬崖端会检测到110以下的数值。如果grayscale sensor module检测的数值不正常，你就需要对它进行校准。将grayscale sensor module放在白色地面上，用
-螺丝刀顺时针扭动模块上的旋转按钮，使其检测到的值最大，然后将Grayscale sensor module放在黑色地面上，用螺丝刀逆时针扭动
-模块上的模块上的旋转按钮，使其检测到的值最小，这样就完成了校准。
+When using the grayscale sensor module, the probe should be about 5 mm from the ground.
+
+Normally, it will detect a value above 1100 on white ground. 
+On black ground, it will detect values below 900. 
+On a cliff, it will detect a value below 110. (If the reading is 0, it means that the probe does not detect the ground.)
+
+If the grayscale sensor module does not detect normal values, you will need to calibrate it.
+
+Hover it over a white ground and twist the potentiometer clockwise so that the reading is greater than 1100 (usually around 1200). Then suspend it on a dark ground and twist the potentiometer counterclockwise so that it is less than 900 (usually between 300 and 600). Repeat this several times to get it to the maximum difference in both cases.
+
 
 .. image:: img/arduino_test4-1.png
   :width: 400
   :align: center
 
-Test the RGB board
+Test the RGB Board
 --------------------
 
 Finishing the wire up according to the diagram.
@@ -90,10 +96,10 @@ Finishing the wire up according to the diagram.
   :width: 400
   :align: center
 
-Run flashingLight.py, the RGB light under the car flashes every 0.5 seconds and
+Run ``flashingLight.py``, the RGB light under the car flashes every 0.5 seconds and
 changes color every time it flashes.
 
-Test the servo
+Test the Servo
 ---------------
 
 Finishing the wire up according to the diagram.
@@ -102,4 +108,4 @@ Finishing the wire up according to the diagram.
   :width: 400
   :align: center
 
-Run servo.py, 舵机将会先左转30度，然后右转30度，最后回到0度位置。保留这个0度位置不变，然后进行对ESP-4WD Car的组装。
+Run ``servo.py``. The servo will first turn 30 degrees left, then 30 degrees right, and finally return to 0 degrees.

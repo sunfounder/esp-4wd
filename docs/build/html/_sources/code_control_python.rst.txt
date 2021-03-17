@@ -1,31 +1,19 @@
 Code Control
 =============
 
-In this chapter, we are provided with method of arduino control. Open esp-4wd\
-Micropython\example, you can see a total of 7 code examples, you can use these 7
+In this chapter, we are provided with method of arduino control. Open ``esp-4wd\
+Micropython\example`` , you can see a total of 7 code examples, you can use these 7
 examples to quickly get started using the ESP-4WD Car.
 
 .. image:: img/python_code1.png
   :width: 250
   :align: center
 
-.. toctree::
-    :maxdepth: 1
-
-    move
-    ultrasonic
-    grayValue
-    flashingLight
-    waterfallLight
-    measureSpeed
-    morePlay
-    开机自启的方法
 
 move
 -----
 
-Run the move.ino file, the car will go
-forward 1s, go backward 1s, turn left 1s, turn right 1s at 30% speed, and finally stop.
+Run the ``move.py`` file, the car will go forward 1s, go backward 1s, turn left 1s, turn right 1s at 30% speed, and finally stop.
 
 .. code-block:: python
 
@@ -51,7 +39,7 @@ forward 1s, go backward 1s, turn left 1s, turn right 1s at 30% speed, and finall
 ultrasonic
 -----------
 
-Run ultrasonic.py, the Shell window will always print the distance value read by the ultrasonic module.
+Run ``ultrasonic.py`` , the Shell window will always print the distance value read by the ultrasonic module.
 
 .. code-block:: python
 
@@ -71,7 +59,7 @@ Run ultrasonic.py, the Shell window will always print the distance value read by
 grayValue
 -----------
 
-Run grayValue.py, the Shell window will always print the reading value of the grayscale sensor.
+Run ``grayValue.py`` , the Shell window will always print the reading value of the grayscale sensor.
 
 .. code-block:: python
 
@@ -93,7 +81,7 @@ Run grayValue.py, the Shell window will always print the reading value of the gr
 flashingLight
 ---------------
 
-Run flashingLight.py, the RGB light under the car flashes every 0.5 seconds and
+Run ``flashingLight.py``, the RGB light under the car flashes every 0.5 seconds and
 changes color every time it flashes.
 
 .. code-block:: python
@@ -118,9 +106,9 @@ changes color every time it flashes.
 waterfallLight
 ----------------
 
-Run waterfallLight.py, the RGB lights under the car will gradually turn on from the
-first to the twenty-fourth, and then turn off from the end to the middle. After that,
-the RGB lights will turn on from the twenty-fourth to the first, and then turn off from
+Run ``waterfallLight.py``, the RGB lights under the car will gradually turn on from the 
+first to the twenty-fourth, and then turn off from the end to the middle. After that, 
+the RGB lights will turn on from the twenty-fourth to the first, and then turn off from 
 the end to the middle.
 
 .. code-block:: python
@@ -155,9 +143,9 @@ the end to the middle.
     finally:
         car.set_light_off()
 
-The sentence to light up the LED is car.set_num_color(i, red, green, blue); the first
+The sentence to light up the LED is ``car.set_num_color(i, red, green, blue)`` ; the first
 parameter is the number of the light, and the last three parameters are the RGB value.
-For example, car.set_num_color(4,255,0,0) means to make the No. 4 LED light up in
+For example, ``car.set_num_color(4,255,0,0)`` means to make the No. 4 LED light up in
 red.
 
 .. image:: img/arduino_code1.png
@@ -167,7 +155,19 @@ red.
 measureSpeed
 --------------
 
-Run measureSpeed.py, 小车将会以随机速度前进一秒，并把Photo-interrupter Module检测到的速度打印在Shell窗口。
+Run ``measureSpeed.py`` ,  the car will move at a random speed, and the 2-ch Photo-
+interrupter Module will detect the speed of the car.
+
+The light emitted from the transmitting end of the 2-ch Photo-interrupter Module
+to the receiving end will pass through the Encoding Disk (which has 20 holes). When
+the receiving end does not receive the light, it will send a "0" to the microcontroller,
+otherwise it will send a "1".
+
+This means that when a total of 20 "1"s are detected, the small wheel has turned one
+round (a distance of the wheel circumference has been traveled forward).
+
+In the same way, we can detect the frequency of the "1" received by the
+microcontroller and calculate the speed of the trolley in cm/s.
 
 .. code-block:: python
 
@@ -192,7 +192,7 @@ Run measureSpeed.py, 小车将会以随机速度前进一秒，并把Photo-inter
 morePlay
 ---------
 
-Run 7.morePlay.py, this example provides 4 ways to use ESP-4WD Car. You can switch
+Run ``morePlay.py`` , this example provides 4 ways to use ESP-4WD Car. You can switch 
 between different modes by modifying the value of the mode variable.
 
 .. code-block:: python
@@ -239,37 +239,35 @@ distance.
 Modify the value of the mode variable to 4. The ESP-4WD Car moves along the black
 line on the white ground (where the grayscale sensor detection value is below 400).
 
-开机自启
---------
+Startup at boot
+--------------------
 
-由于前面提供的7个示例在断电重启后，不会再重新运行。所以在这里，我们提供让python程序开机自启动的方法。
-
-点击左上角的新建文件图标
+Here, we provide a method to let the python program start automatically. Click the new file icon in the upper left corner.
 
 .. image:: img/python_code2.png
   :width: 300
   :align: center
 
-在新建的文件中输入
+Import the sample code file in the this file.
 
 .. code-block:: python
 
     import move
 
-点击左上角的保存按钮，在弹出的选项框中选择**MicroPython device**。
+Click the save button in the upper left corner, and select **MicroPython device** in the pop-up option box. 
 
 .. image:: img/python_code3.png
-  :width: 400
+  :width: 300
   :align: center
 
-将文件命名为main.py（如果你用了其他命名，将导致无法开机自启）
+Name the file **main.py** .
 
 .. image:: img/python_code4.png
   :width: 400
   :align: center
 
-运行main.py，小车将会执行move.py文件里的代码。并且在下次重启小车后，代码仍然有效。
-如果你想要运行其他示例代码，只需要修改main.py的内容，例如你想要每次上电是运行waterfallLight.py的代码，则输入
+Unplug the data cable and re-power the main control board. **main.py** will run automatically.
+If you want to run other effects, you can write the program directly on main.py, or you can import it in main.py after the other files have been programmed.
 
 .. code-block:: python
 

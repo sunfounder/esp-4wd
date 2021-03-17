@@ -89,17 +89,17 @@
 <li class="toctree-l1"><a class="reference internal" href="Components List.html">Components List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="For Arduino User.html">For Arduino User</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="For Python User.html">For Python User</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="config_and_installation_python.html">软件配置和安装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="component_testing_python.html">器件测试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_and_installation_python.html">Setup Your Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_testing_python.html">Component Testing by Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hardware_assembly_python.html">Hardware Assembling</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="play_python.html">小车控制</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="play_python.html">Play the car with Python</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="code_control_python.html">Code Control</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">APP control</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#install-sunfounder-controller">Install Sunfounder Controller</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#about-sunfounder-controller">About Sunfounder Controller</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#establish-communication">Establish communication</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#app">APP操作</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#diy">DIY遥控器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app-operation">APP Operation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#diy-remote-control">DIY Remote Control</a></li>
 </ul>
 </li>
 </ul>
@@ -157,7 +157,7 @@
         
           <li><a href="For Python User.html">For Python User</a> &raquo;</li>
         
-          <li><a href="play_python.html">小车控制</a> &raquo;</li>
+          <li><a href="play_python.html">Play the car with Python</a> &raquo;</li>
         
       <li>APP control</li>
     
@@ -180,14 +180,10 @@
             
   <div class="section" id="app-control">
 <h1>APP control<a class="headerlink" href="#app-control" title="Permalink to this headline">¶</a></h1>
-<p>In this chapter,你将学习使用Sunfounder Controller这款遥控器软件，并在Sunfounder Controller上diy一个遥控器来
-控制小车。</p>
-<div class="toctree-wrapper compound">
-</div>
+<p>In this chapter, you will learn to use a APP - Sunfounder Controller to control the car.</p>
 <div class="section" id="install-sunfounder-controller">
 <h2>Install Sunfounder Controller<a class="headerlink" href="#install-sunfounder-controller" title="Permalink to this headline">¶</a></h2>
-<p>Open App Store (iOS/Mac OS X system) or Play Store (Android/Windows/Linux
-system), then search and download Sunfounder Controller.</p>
+<p>Open App Store (iOS/Mac OS X system) or Play Store (Android/Windows/Linux system), then search and download Sunfounder Controller.</p>
 <a class="reference internal image-reference" href="_images/arduino_app1.png"><img alt="_images/arduino_app1.png" class="align-center" src="_images/arduino_app1.png" style="width: 500px;" /></a>
 </div>
 <div class="section" id="about-sunfounder-controller">
@@ -199,7 +195,7 @@ system), then search and download Sunfounder Controller.</p>
 <p>Click the middle button to add a new controller.</p>
 <a class="reference internal image-reference" href="_images/arduino_app3.png"><img alt="_images/arduino_app3.png" class="align-center" src="_images/arduino_app3.png" style="width: 450px;" /></a>
 <p>Sunfounder Controller is a platform that can add custom remote control handles. It
-reserves many control interfaces. There are a total of 17 areas from A to Q. Each area
+reserves many widget interfaces. There are a total of 17 areas from A to Q. Each area
 has selectable widgets.</p>
 <a class="reference internal image-reference" href="_images/arduino_app4.png"><img alt="_images/arduino_app4.png" class="align-center" src="_images/arduino_app4.png" style="width: 450px;" /></a>
 <p>The available widgets in the large square area include joystick and cross-shaped
@@ -239,9 +235,9 @@ corner.</p>
 <p>In addition to the code control method, we also provide the APP control method.
 You can open Sunfounder Controller on mobile phones, tablets and other devices,
 and then make a controller to control ESP-4WD Car.</p>
-<div class="section" id="id1">
-<h3>运行代码<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Open the ws.py file in the MicroPython device.</p>
+<div class="section" id="run-the-code">
+<h3>Run the code<a class="headerlink" href="#run-the-code" title="Permalink to this headline">¶</a></h3>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">ws.py</span></code> file in the MicroPython device.</p>
 <a class="reference internal image-reference" href="_images/python_app1.png"><img alt="_images/python_app1.png" class="align-center" src="_images/python_app1.png" style="width: 180px;" /></a>
 </div>
 <div class="section" id="ap-mode">
@@ -250,14 +246,14 @@ and then make a controller to control ESP-4WD Car.</p>
 and ESP32 RDP: One is AP mode, the other is STA mode. We can switch the
 communication mode by modifying the code of ws.py.</p>
 <p>If you want to use AP mode, you need to connect Sunfounder Contorller to the hotspot released by ESP32 RDP.
-Move the code to line 10, please set SSID and PSK here.（代码中的NAME既是SSID，同时也是小车的名字） If you have more than one EPS-4WD Cars, you need to
+Move the code to line 10, please set SSID and PSK here. If you have more than one EPS-4WD Cars, you need to
 set different NAMEs for them to avoid a wrong connection. In addition, you need to set a password of more
 than 8 digits.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">NAME</span> <span class="o">=</span> <span class="s1">&#39;ESP-4WD Car&#39;</span>
 <span class="n">AP_PASSWORD</span> <span class="o">=</span> <span class="s2">&quot;123456789&quot;</span>
 </pre></div>
 </div>
-<p>Then modify the content of line 10 and define the SWITCH_MODE variable as “ap”.</p>
+<p>Then modify the content of line 10 and define the <code class="docutils literal notranslate"><span class="pre">SWITCH_MODE</span></code> variable as “ap”.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SWITCH_MODE</span> <span class="o">=</span> <span class="s2">&quot;ap&quot;</span>
 </pre></div>
 </div>
@@ -265,11 +261,11 @@ than 8 digits.</p>
 electronic device, open the WLAN management interface and connect to the wifi
 network.</p>
 <a class="reference internal image-reference" href="_images/arduino_app12.png"><img alt="_images/arduino_app12.png" class="align-center" src="_images/arduino_app12.png" style="width: 400px;" /></a>
-<p>打开Sunfounder Controller，点击右上方的连接图标。</p>
+<p>Open Sunfounder Controller and click the Connect icon on the top right.</p>
 <a class="reference internal image-reference" href="_images/arduino_app_new1.png"><img alt="_images/arduino_app_new1.png" class="align-center" src="_images/arduino_app_new1.png" style="width: 300px;" /></a>
-<p>连接成功会出现提示框。</p>
+<p>A prompt box will appear if the connection is successful.</p>
 <a class="reference internal image-reference" href="_images/arduino_app_new2.png"><img alt="_images/arduino_app_new2.png" class="align-center" src="_images/arduino_app_new2.png" style="width: 400px;" /></a>
-<p>并且在sunfounder的界面上会显示小车的名字。</p>
+<p>And the name of the car will be displayed on APP.</p>
 <a class="reference internal image-reference" href="_images/arduino_app_new3.png"><img alt="_images/arduino_app_new3.png" class="align-center" src="_images/arduino_app_new3.png" style="width: 300px;" /></a>
 </div>
 <div class="section" id="sta-mode">
@@ -282,29 +278,28 @@ device should connect to this wifi.</p>
 <span class="n">STA_PASSWORD</span> <span class="o">=</span> <span class="s2">&quot;sunfounder&quot;</span>
 </pre></div>
 </div>
-<p>Then modify the content of line 14 and define the SWITCH_MODE variable as “sta”.</p>
+<p>Then modify the content of line 14 and define the <code class="docutils literal notranslate"><span class="pre">SWITCH_MODE</span></code> variable as “sta”.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SWITCH_MODE</span> <span class="o">=</span> <span class="s2">&quot;sta&quot;</span>
 </pre></div>
 </div>
-<p>After downloading the code, ESP32 RDP will automatically connect to the wifi network
-, and at the same time take out your electronic device, open the WLAN management interface
+<p>After downloading the code, ESP32 RDP will automatically connect to the wifi network, and at the same time take out your electronic device, open the WLAN management interface
 and connect to this wifi network.</p>
 <a class="reference internal image-reference" href="_images/arduino_app13.png"><img alt="_images/arduino_app13.png" class="align-center" src="_images/arduino_app13.png" style="width: 400px;" /></a>
-<p>打开Sunfounder Controller，点击右上方的连接图标。</p>
+<p>Open Sunfounder Controller and click the Connect icon on the top right.</p>
 <a class="reference internal image-reference" href="_images/arduino_app_new1.png"><img alt="_images/arduino_app_new1.png" class="align-center" src="_images/arduino_app_new1.png" style="width: 300px;" /></a>
-<p>在弹出的确认框中找到小车名字，点击它。</p>
+<p>Find the car name in the pop-up window and click on it.</p>
 <a class="reference internal image-reference" href="_images/arduino_app_new4.png"><img alt="_images/arduino_app_new4.png" class="align-center" src="_images/arduino_app_new4.png" style="width: 450px;" /></a>
-<p>连接成功后，在sunfounder的界面上会显示小车的名字。</p>
+<p>After connecting, the name of the car will be displayed on APP.</p>
 <a class="reference internal image-reference" href="_images/arduino_app_new3.png"><img alt="_images/arduino_app_new3.png" class="align-center" src="_images/arduino_app_new3.png" style="width: 300px;" /></a>
 </div>
 </div>
-<div class="section" id="app">
-<h2>APP操作<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="app-operation">
+<h2>APP Operation<a class="headerlink" href="#app-operation" title="Permalink to this headline">¶</a></h2>
 <p>Download this code, and then using any of the above methods to establish
 communication.</p>
-<div class="section" id="id2">
-<h3>添加按键<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>Open Sunfounder Controller, and then 新建 an empty controller.</p>
+<div class="section" id="add-widget">
+<h3>Add Widget<a class="headerlink" href="#add-widget" title="Permalink to this headline">¶</a></h3>
+<p>Open Sunfounder Controller, and then create an empty controller.</p>
 <a class="reference internal image-reference" href="_images/arduino_app3.png"><img alt="_images/arduino_app3.png" class="align-center" src="_images/arduino_app3.png" style="width: 450px;" /></a>
 <p>As shown in the figure, select the corresponding widget for the controller. After
 adding, click the icon in the upper right corner to save the configuration.</p>
@@ -320,19 +315,19 @@ control ESP-4WD Car.</p>
 <a class="reference internal image-reference" href="_images/arduino_app15.png"><img alt="_images/arduino_app15.png" class="align-center" src="_images/arduino_app15.png" style="width: 450px;" /></a>
 </div>
 </div>
-<div class="section" id="diy">
-<h2>DIY遥控器<a class="headerlink" href="#diy" title="Permalink to this headline">¶</a></h2>
-<p>如果你想要DIY一个新的遥控器，你需要了解ESP32 RDP和Sunfounder Controller之间的通信过程。Open the
-test_control.py file. 你将通过这个代码来了解它们之间的通信。</p>
+<div class="section" id="diy-remote-control">
+<h2>DIY Remote Control<a class="headerlink" href="#diy-remote-control" title="Permalink to this headline">¶</a></h2>
+<p>If you want to DIY a new remote control, you need to understand the communication process between the ESP32 RDP and the Sunfounder Controller.
+Open the <code class="docutils literal notranslate"><span class="pre">test_control.py</span> <span class="pre">file</span></code> . You will go through this code to see how they communicate with each other.</p>
 <div class="section" id="program-framework">
 <h3>Program framework<a class="headerlink" href="#program-framework" title="Permalink to this headline">¶</a></h3>
 <p>First, let us understand the general operating framework of the program.</p>
-<p>Turn the code to line 34. In the main() function, we have written the basic
+<p>Turn the code to line 34. In the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function, we have written the basic
 implementation code for build a controller.</p>
-<p>ws.start(): Establish communication between ESP-4WD RDP and Sunfounder
+<p><code class="docutils literal notranslate"><span class="pre">ws.start()</span></code> : Establish communication between ESP-4WD RDP and Sunfounder
 Controller.</p>
-<p>result = read(): Read the received data and store it in the result variable.</p>
-<p>write()：Send sensor data to Sunfounder Controller.</p>
+<p><code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">read()</span></code> : Read the received data and store it in the result variable.</p>
+<p><code class="docutils literal notranslate"><span class="pre">write()</span></code> ：Send sensor data to Sunfounder Controller.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">ws</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">)</span>
@@ -348,10 +343,9 @@ Controller.</p>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Open the ws.py file, turn the code to line 87, in the start() function, we switch the
-communication mode by judging the value of SWITCH_MODE.</p>
+<p>Open the ws.py file, turn the code to line 87, in the <code class="docutils literal notranslate"><span class="pre">start()</span></code> function, we switch the
+communication mode by judging the value of <code class="docutils literal notranslate"><span class="pre">SWITCH_MODE</span></code> .</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="c1"># self.stop()</span>
     <span class="k">if</span> <span class="n">SWITCH_MODE</span> <span class="o">==</span> <span class="s2">&quot;ap&quot;</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wlan</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">WLAN</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">AP_IF</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wlan</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">essid</span><span class="o">=</span><span class="n">AP_NAME</span><span class="p">,</span> <span class="n">authmode</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">AP_PASSWORD</span><span class="p">)</span>
@@ -363,18 +357,17 @@ communication mode by judging the value of SWITCH_MODE.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>接收过程<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>在ESP32 RDP会与Sunfounder Controller的通信过程会产生数据交互，ESP32 RDP既会接收来自Sunfounder Controller的数据，
-也会将自身的传感器数据发送给Sunfounder Controller。所以我们先来了解一下ESP32 RDP从Sunfounder Controller接收了
-哪些数据。</p>
-<p><strong>Step 1:创建遥控器</strong></p>
-<p>Run the test_control.py file, re-establish communication, and then open Sunfounder Controller to create
+<div class="section" id="receiving">
+<h3>Receiving<a class="headerlink" href="#receiving" title="Permalink to this headline">¶</a></h3>
+<p>The ESP32 RDP receives data from the Sunfounder Controller and sends its own sensor data to the Sunfounder Controller.
+Let’s find out what data ESP32 RDP receives from Sunfounder Controller.</p>
+<p><strong>Step 1: Create a remote control</strong></p>
+<p>Run the <code class="docutils literal notranslate"><span class="pre">test_control.py</span></code> file, re-establish communication, and then open Sunfounder Controller to create
 a new controller. We add a slider in the H area and a cross-shaped steering wheel in the K area. After
 adding, click the icon in the upper right corner to save.</p>
 <a class="reference internal image-reference" href="_images/arduino_app16.png"><img alt="_images/arduino_app16.png" class="align-center" src="_images/arduino_app16.png" style="width: 450px;" /></a>
-<p><strong>Step 2:小车接收控件的值</strong></p>
-<p>Turn the code to line 14, in the read() function, we realized the receiving and printing
+<p><strong>Step 2: Received values</strong></p>
+<p>Turn the code to line 14, in the <code class="docutils literal notranslate"><span class="pre">read()</span></code> function, we realized the receiving and printing
 of the data sent by the Sunfounder Controller. The function of the temp variable is to
 prevent repeated printing of data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read</span><span class="p">():</span>
@@ -389,17 +382,17 @@ prevent repeated printing of data.</p>
     <span class="k">return</span> <span class="n">recv_data</span>
 </pre></div>
 </div>
-<p>Receive the Json object sent by Sunfounder Controller through the ws.read()
-function and store it in the recv variable.</p>
+<p>Receive the Json object sent by Sunfounder Controller through the <code class="docutils literal notranslate"><span class="pre">ws.read()</span></code>
+function and store it in the <code class="docutils literal notranslate"><span class="pre">recv</span></code> variable.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">recv</span> <span class="o">=</span> <span class="n">ws</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Parse recv variable (Json object format) into recv_data dictionary through the
-json.loads( ) function.</p>
+<p>Parse <code class="docutils literal notranslate"><span class="pre">recv</span></code> variable (Json object format) into <code class="docutils literal notranslate"><span class="pre">recv_data</span></code> dictionary through the
+<code class="docutils literal notranslate"><span class="pre">json.loads(</span> <span class="pre">)</span></code> function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">recv_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">recv</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Print recv_data variable.</p>
+<p>Print <code class="docutils literal notranslate"><span class="pre">recv_data</span></code> variable.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;recv_data: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">recv_data</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -408,18 +401,18 @@ json.loads( ) function.</p>
 <p>Open the Shell window under Thonny, we can find that the initial data of K
 control is the string “stop”, and the initial data of H widget is the int value 50.</p>
 <a class="reference internal image-reference" href="_images/arduino_app18.png"><img alt="_images/arduino_app18.png" class="align-center" src="_images/arduino_app18.png" style="width: 450px;" /></a>
-<p>按住K区域的cross-shaped steering wheel的不同方向键，并且滑动H区域的slider。</p>
+<p>Press the arrow keys of the cross-shaped steering wheel in the K area and slide the slider in the H area.</p>
 <a class="reference internal image-reference" href="_images/arduino_app19.png"><img alt="_images/arduino_app19.png" class="align-center" src="_images/arduino_app19.png" style="width: 450px;" /></a>
 <p>You can see that the cross-shaped steering
 wheel widget sends a string of data (“forward”, “backward”, “left”, “right”) to the ESP-
 4WD RDP. The slider widget will send an int data (range: 0-100) to the ESP-4WD RDP.</p>
 <a class="reference internal image-reference" href="_images/arduino_app20.png"><img alt="_images/arduino_app20.png" class="align-center" src="_images/arduino_app20.png" style="width: 450px;" /></a>
-<p><strong>Step 3:小车响应</strong></p>
-<p>当ESP-4WD Car接收到来自Sunfounder Controller不同控件的数据时，它需要做出相应的响应。
+<p><strong>Step 3: Response</strong></p>
+<p>When ESP-4WD Car receives data from different controls of Sunfounder Controller, it needs to respond accordingly.
 Let’s write a piece of code that uses the widgets on the Sunfounder Controller
 to control the movement of the car. The K widget(cross-shaped steering wheel) controls
 the direction of the car, and the H widget(slider) controls the speed of the car.</p>
-<p>Turn the code to line 43，我们将以下代码添加在这一行里。（有部分被注释的内容未展示，请不要将它们删除。）</p>
+<p>Turn the code to line 43, we add the following code in this line.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">ws</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">)</span>
@@ -432,17 +425,17 @@ the direction of the car, and the H widget(slider) controls the speed of the car
         <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Through the read() function, you can receive the data sent by Sunfounder
+<p>Through the <code class="docutils literal notranslate"><span class="pre">read()</span></code> function, you can receive the data sent by Sunfounder
 Controller and store it in the result dictionary.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The value of doc_recv[“K_region”] is the string data (“forward”, “backward”,”left”,
+<p>The value of <code class="docutils literal notranslate"><span class="pre">doc_recv[&quot;K_region&quot;]</span></code> is the string data (“forward”, “backward”,”left”,
 “right”) sent by the K widget (cross-shaped steering wheel), the same as the value of
-doc_recv[“H_region”] is the int data sent by H widget (slide) (range: 0-100).</p>
-<p>Pass doc_recv[“K_region”] as the first parameter to the car.move() function to control
-the direction of the ESP-4WD Car. Pass doc_recv[“H_region”] as the second parameter
-to the car.move() function to control the speed of ESP-4WD Car.</p>
+<code class="docutils literal notranslate"><span class="pre">doc_recv[&quot;H_region&quot;]</span></code> is the int data sent by H widget (slide) (range: 0-100).</p>
+<p>Pass <code class="docutils literal notranslate"><span class="pre">doc_recv[&quot;K_region&quot;]</span></code> as the first parameter to the <code class="docutils literal notranslate"><span class="pre">car.move()</span></code> function to control
+the direction of the ESP-4WD Car. Pass <code class="docutils literal notranslate"><span class="pre">doc_recv[&quot;H_region&quot;]</span></code> as the second parameter
+to the <code class="docutils literal notranslate"><span class="pre">car.move()</span></code> function to control the speed of ESP-4WD Car.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">car</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;K_region&#39;</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;H_region&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -452,12 +445,12 @@ The cross-shaped steering wheel in the K area can control the direction of the E
 4WD Car, and the slider in the H area can control the speed of the ESP-4WD Car.</p>
 <a class="reference internal image-reference" href="_images/arduino_app17.png"><img alt="_images/arduino_app17.png" class="align-center" src="_images/arduino_app17.png" style="width: 250px;" /></a>
 </div>
-<div class="section" id="id4">
-<h3>发送过程<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>我们再来了解一下ESP32 RDP是如何将自身的传感器数据发送给Sunfounder Controller。</p>
-<p><strong>Step 1:创建遥控器</strong></p>
+<div class="section" id="sending">
+<h3>Sending<a class="headerlink" href="#sending" title="Permalink to this headline">¶</a></h3>
+<p>Let’s take a closer look at how the ESP32 RDP sends its own sensor data to the Sunfounder Controller.</p>
+<p><strong>Step 1: Create a remote control</strong></p>
 <p>Open the <strong>ws.py</strong> file and turn the code to line 25. Here, the equipment information and proofreading
-information of ESP-4WD Car are stored in the send_dict dictionary.（有部分被注释的内容未展示，请不要将它们删除。）</p>
+information of ESP-4WD Car are stored in the <code class="docutils literal notranslate"><span class="pre">send_dict</span></code> dictionary.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">send_dict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="n">AP_NAME</span><span class="p">,</span>
     <span class="s1">&#39;Type&#39;</span><span class="p">:</span><span class="s1">&#39;ESP-4WD Car&#39;</span><span class="p">,</span>
@@ -466,17 +459,37 @@ information of ESP-4WD Car are stored in the send_dict dictionary.（有部分�
 </pre></div>
 </div>
 <p>Open the <strong>test_control.py</strong> file and turn the code to line 44, delete the comment symbol for this code.
-Obtain the grayscale sensor data through the car.get_grayscale_list() function and store it in the
-ws.send_dict dictionary with the key’L_region’.</p>
-<p>Turn the code to line 44, through the write() function, we send sensor data to the Sunfounder Controller,
-where the temp_send variable is used to prevent repeated printing of data.</p>
-<p>我们来解释一下这段代码。First, use the json.dumps() function to convert the ws.send_dict dictionary into
-a Json object, and then use the ws.write() function to send the Json object storing the
+Obtain the grayscale sensor data through the <code class="docutils literal notranslate"><span class="pre">car.get_grayscale_list()</span></code> function and store it in the
+<code class="docutils literal notranslate"><span class="pre">ws.send_dict</span></code> dictionary with the key ‘L_region’.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">ws</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">read</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">result</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+<span class="hll">            <span class="n">ws</span><span class="o">.</span><span class="n">send_dict</span><span class="p">[</span><span class="s1">&#39;L_region&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">car</span><span class="o">.</span><span class="n">get_grayscale_list</span><span class="p">()</span>
+</span>            <span class="n">write</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Turn the code to line 44, through the <code class="docutils literal notranslate"><span class="pre">write()</span></code> function, we send sensor data to the Sunfounder Controller,
+where the <code class="docutils literal notranslate"><span class="pre">temp_send</span></code> variable is used to prevent repeated printing of data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">write</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">temp_send</span>
+<span class="hll">    <span class="n">ws</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">ws</span><span class="o">.</span><span class="n">send_dict</span><span class="p">))</span>
+</span>    <span class="k">if</span> <span class="n">temp_send</span> <span class="o">!=</span> <span class="n">ws</span><span class="o">.</span><span class="n">send_dict</span><span class="p">:</span>
+<span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;send_data:</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">ws</span><span class="o">.</span><span class="n">send_dict</span><span class="p">)</span>
+</span>        <span class="n">temp_send</span> <span class="o">=</span> <span class="n">ws</span><span class="o">.</span><span class="n">send_dict</span><span class="o">.</span><span class="n">copy</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+<p>First, use the <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code> function to convert the <code class="docutils literal notranslate"><span class="pre">ws.send_dict</span></code> dictionary into
+a Json object, and then use the <code class="docutils literal notranslate"><span class="pre">ws.write()</span></code> function to send the <code class="docutils literal notranslate"><span class="pre">Json</span></code> object storing the
 sensor data to the Sunfounder Controller.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">ws</span><span class="o">.</span><span class="n">send_dict</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>然后Print the value of the ws.send_dict dictionary.</p>
+<p>Print the value of the <code class="docutils literal notranslate"><span class="pre">ws.send_dict</span></code> dictionary.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;send_data:</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">ws</span><span class="o">.</span><span class="n">send_dict</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -485,22 +498,32 @@ sensor data to the Sunfounder Controller.</p>
 sending device information, calibration information and the value of the grayscale
 sensor to the Sunfounder Controller.</p>
 <a class="reference internal image-reference" href="_images/arduino_app22.png"><img alt="_images/arduino_app22.png" class="align-center" src="_images/arduino_app22.png" style="width: 450px;" /></a>
-<p><strong>Step 3:小车响应</strong></p>
+<p><strong>Step 3: Response</strong></p>
 <p>Let’s write a piece of code that display the sensor data of ESP-4WD RDP on the
-widget of Sunfounder Controller.Widget D (grayscale detection tool)将会根据检测到的灰度值显示地面情况。</p>
-<p>Turn the code to line 34, 我们来重新解释一下main()函数的内容。</p>
-<p>通过car.get_grayscale_list()函数，我们可以获取储存着灰度传感器检测值的列表，
-并将列表里的内容赋值给doc_send[“L_region”]。</p>
+widget of Sunfounder Controller. Widget D (grayscale detection tool) will show you the grayscale of the ground.</p>
+<p>Turn the code to line 34, Let’s re-explain the content of the <code class="docutils literal notranslate"><span class="pre">main()</span></code> event.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">ws</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">read</span><span class="p">()</span>
+<span class="hll">        <span class="k">if</span> <span class="n">result</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">ws</span><span class="o">.</span><span class="n">send_dict</span><span class="p">[</span><span class="s1">&#39;L_region&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">car</span><span class="o">.</span><span class="n">get_grayscale_list</span><span class="p">()</span>
+</span>            <span class="n">write</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By <code class="docutils literal notranslate"><span class="pre">car.get_grayscale_list()</span></code> function, we can get the list of grayscale sensor detection values and assign them to <code class="docutils literal notranslate"><span class="pre">ws.send_dict['L_region']</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="o">.</span><span class="n">send_dict</span><span class="p">[</span><span class="s1">&#39;L_region&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">car</span><span class="o">.</span><span class="n">get_grayscale_list</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Send sensor data, device information and proofreading information of the ESP-4WD RDP
-to Sunfounder Controller through write() function.</p>
+to Sunfounder Controller through <code class="docutils literal notranslate"><span class="pre">write()</span></code> function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">write</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>回到遥控器界面，Widget D(grayscale detection tool)正在显示当前地面情况，如果想要知道更多关于控件的信息，请回到
-Widget List查看。</p>
+<p>Back in the remote control interface, Widget D (grayscale detection tool) is showing the current ground conditions, if you want to know more about the controls, please go back to
+Widget List to see.</p>
 <a class="reference internal image-reference" href="_images/arduino_app23.png"><img alt="_images/arduino_app23.png" class="align-center" src="_images/arduino_app23.png" style="width: 250px;" /></a>
 </div>
 </div>

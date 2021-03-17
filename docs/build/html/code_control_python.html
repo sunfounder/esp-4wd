@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="APP control" href="app_control_python.html" />
-    <link rel="prev" title="小车控制" href="play_python.html" /> 
+    <link rel="prev" title="Play the car with Python" href="play_python.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,10 +89,10 @@
 <li class="toctree-l1"><a class="reference internal" href="Components List.html">Components List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="For Arduino User.html">For Arduino User</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="For Python User.html">For Python User</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="config_and_installation_python.html">软件配置和安装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="component_testing_python.html">器件测试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_and_installation_python.html">Setup Your Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_testing_python.html">Component Testing by Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hardware_assembly_python.html">Hardware Assembling</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="play_python.html">小车控制</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="play_python.html">Play the car with Python</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Code Control</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#move">move</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ultrasonic">ultrasonic</a></li>
@@ -101,7 +101,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#waterfalllight">waterfallLight</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#measurespeed">measureSpeed</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#moreplay">morePlay</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">开机自启</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#startup-at-boot">Startup at boot</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="app_control_python.html">APP control</a></li>
@@ -160,7 +160,7 @@
         
           <li><a href="For Python User.html">For Python User</a> &raquo;</li>
         
-          <li><a href="play_python.html">小车控制</a> &raquo;</li>
+          <li><a href="play_python.html">Play the car with Python</a> &raquo;</li>
         
       <li>Code Control</li>
     
@@ -183,15 +183,13 @@
             
   <div class="section" id="code-control">
 <h1>Code Control<a class="headerlink" href="#code-control" title="Permalink to this headline">¶</a></h1>
-<p>In this chapter, we are provided with method of arduino control. Open esp-4wdMicropythonexample, you can see a total of 7 code examples, you can use these 7
+<p>In this chapter, we are provided with method of arduino control. Open <code class="docutils literal notranslate"><span class="pre">esp-4wd\</span>
+<span class="pre">Micropython\example</span></code> , you can see a total of 7 code examples, you can use these 7
 examples to quickly get started using the ESP-4WD Car.</p>
 <a class="reference internal image-reference" href="_images/python_code1.png"><img alt="_images/python_code1.png" class="align-center" src="_images/python_code1.png" style="width: 250px;" /></a>
-<div class="toctree-wrapper compound">
-</div>
 <div class="section" id="move">
 <h2>move<a class="headerlink" href="#move" title="Permalink to this headline">¶</a></h2>
-<p>Run the move.ino file, the car will go
-forward 1s, go backward 1s, turn left 1s, turn right 1s at 30% speed, and finally stop.</p>
+<p>Run the <code class="docutils literal notranslate"><span class="pre">move.py</span></code> file, the car will go forward 1s, go backward 1s, turn left 1s, turn right 1s at 30% speed, and finally stop.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">esp32_rdp</span> <span class="k">as</span> <span class="nn">car</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
@@ -215,7 +213,7 @@ forward 1s, go backward 1s, turn left 1s, turn right 1s at 30% speed, and finall
 </div>
 <div class="section" id="ultrasonic">
 <h2>ultrasonic<a class="headerlink" href="#ultrasonic" title="Permalink to this headline">¶</a></h2>
-<p>Run ultrasonic.py, the Shell window will always print the distance value read by the ultrasonic module.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">ultrasonic.py</span></code> , the Shell window will always print the distance value read by the ultrasonic module.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">esp32_rdp</span> <span class="k">as</span> <span class="nn">car</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
@@ -233,7 +231,7 @@ forward 1s, go backward 1s, turn left 1s, turn right 1s at 30% speed, and finall
 </div>
 <div class="section" id="grayvalue">
 <h2>grayValue<a class="headerlink" href="#grayvalue" title="Permalink to this headline">¶</a></h2>
-<p>Run grayValue.py, the Shell window will always print the reading value of the grayscale sensor.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">grayValue.py</span></code> , the Shell window will always print the reading value of the grayscale sensor.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">esp32_rdp</span> <span class="k">as</span> <span class="nn">car</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
@@ -251,7 +249,7 @@ forward 1s, go backward 1s, turn left 1s, turn right 1s at 30% speed, and finall
 </div>
 <div class="section" id="flashinglight">
 <h2>flashingLight<a class="headerlink" href="#flashinglight" title="Permalink to this headline">¶</a></h2>
-<p>Run flashingLight.py, the RGB light under the car flashes every 0.5 seconds and
+<p>Run <code class="docutils literal notranslate"><span class="pre">flashingLight.py</span></code>, the RGB light under the car flashes every 0.5 seconds and
 changes color every time it flashes.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">esp32_rdp</span> <span class="k">as</span> <span class="nn">car</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -274,7 +272,7 @@ changes color every time it flashes.</p>
 </div>
 <div class="section" id="waterfalllight">
 <h2>waterfallLight<a class="headerlink" href="#waterfalllight" title="Permalink to this headline">¶</a></h2>
-<p>Run waterfallLight.py, the RGB lights under the car will gradually turn on from the
+<p>Run <code class="docutils literal notranslate"><span class="pre">waterfallLight.py</span></code>, the RGB lights under the car will gradually turn on from the
 first to the twenty-fourth, and then turn off from the end to the middle. After that,
 the RGB lights will turn on from the twenty-fourth to the first, and then turn off from
 the end to the middle.</p>
@@ -309,15 +307,24 @@ the end to the middle.</p>
     <span class="n">car</span><span class="o">.</span><span class="n">set_light_off</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The sentence to light up the LED is car.set_num_color(i, red, green, blue); the first
+<p>The sentence to light up the LED is <code class="docutils literal notranslate"><span class="pre">car.set_num_color(i,</span> <span class="pre">red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code> ; the first
 parameter is the number of the light, and the last three parameters are the RGB value.
-For example, car.set_num_color(4,255,0,0) means to make the No. 4 LED light up in
+For example, <code class="docutils literal notranslate"><span class="pre">car.set_num_color(4,255,0,0)</span></code> means to make the No. 4 LED light up in
 red.</p>
 <a class="reference internal image-reference" href="_images/arduino_code1.png"><img alt="_images/arduino_code1.png" class="align-center" src="_images/arduino_code1.png" style="width: 300px;" /></a>
 </div>
 <div class="section" id="measurespeed">
 <h2>measureSpeed<a class="headerlink" href="#measurespeed" title="Permalink to this headline">¶</a></h2>
-<p>Run measureSpeed.py, 小车将会以随机速度前进一秒，并把Photo-interrupter Module检测到的速度打印在Shell窗口。</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">measureSpeed.py</span></code> ,  the car will move at a random speed, and the 2-ch Photo-
+interrupter Module will detect the speed of the car.</p>
+<p>The light emitted from the transmitting end of the 2-ch Photo-interrupter Module
+to the receiving end will pass through the Encoding Disk (which has 20 holes). When
+the receiving end does not receive the light, it will send a “0” to the microcontroller,
+otherwise it will send a “1”.</p>
+<p>This means that when a total of 20 “1”s are detected, the small wheel has turned one
+round (a distance of the wheel circumference has been traveled forward).</p>
+<p>In the same way, we can detect the frequency of the “1” received by the
+microcontroller and calculate the speed of the trolley in cm/s.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">esp32_rdp</span> <span class="k">as</span> <span class="nn">car</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -340,7 +347,7 @@ red.</p>
 </div>
 <div class="section" id="moreplay">
 <h2>morePlay<a class="headerlink" href="#moreplay" title="Permalink to this headline">¶</a></h2>
-<p>Run 7.morePlay.py, this example provides 4 ways to use ESP-4WD Car. You can switch
+<p>Run <code class="docutils literal notranslate"><span class="pre">morePlay.py</span></code> , this example provides 4 ways to use ESP-4WD Car. You can switch
 between different modes by modifying the value of the mode variable.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">esp32_rdp</span> <span class="k">as</span> <span class="nn">car</span>
 
@@ -378,21 +385,20 @@ distance.</p>
 <p>Modify the value of the mode variable to 4. The ESP-4WD Car moves along the black
 line on the white ground (where the grayscale sensor detection value is below 400).</p>
 </div>
-<div class="section" id="id1">
-<h2>开机自启<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>由于前面提供的7个示例在断电重启后，不会再重新运行。所以在这里，我们提供让python程序开机自启动的方法。</p>
-<p>点击左上角的新建文件图标</p>
+<div class="section" id="startup-at-boot">
+<h2>Startup at boot<a class="headerlink" href="#startup-at-boot" title="Permalink to this headline">¶</a></h2>
+<p>Here, we provide a method to let the python program start automatically. Click the new file icon in the upper left corner.</p>
 <a class="reference internal image-reference" href="_images/python_code2.png"><img alt="_images/python_code2.png" class="align-center" src="_images/python_code2.png" style="width: 300px;" /></a>
-<p>在新建的文件中输入</p>
+<p>Import the sample code file in the this file.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">move</span>
 </pre></div>
 </div>
-<p>点击左上角的保存按钮，在弹出的选项框中选择**MicroPython device**。</p>
-<a class="reference internal image-reference" href="_images/python_code3.png"><img alt="_images/python_code3.png" class="align-center" src="_images/python_code3.png" style="width: 400px;" /></a>
-<p>将文件命名为main.py（如果你用了其他命名，将导致无法开机自启）</p>
+<p>Click the save button in the upper left corner, and select <strong>MicroPython device</strong> in the pop-up option box.</p>
+<a class="reference internal image-reference" href="_images/python_code3.png"><img alt="_images/python_code3.png" class="align-center" src="_images/python_code3.png" style="width: 300px;" /></a>
+<p>Name the file <strong>main.py</strong> .</p>
 <a class="reference internal image-reference" href="_images/python_code4.png"><img alt="_images/python_code4.png" class="align-center" src="_images/python_code4.png" style="width: 400px;" /></a>
-<p>运行main.py，小车将会执行move.py文件里的代码。并且在下次重启小车后，代码仍然有效。
-如果你想要运行其他示例代码，只需要修改main.py的内容，例如你想要每次上电是运行waterfallLight.py的代码，则输入</p>
+<p>Unplug the data cable and re-power the main control board. <strong>main.py</strong> will run automatically.
+If you want to run other effects, you can write the program directly on main.py, or you can import it in main.py after the other files have been programmed.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">waterfallLight</span>
 </pre></div>
 </div>
@@ -406,7 +412,7 @@ line on the white ground (where the grayscale sensor detection value is below 40
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="app_control_python.html" class="btn btn-neutral float-right" title="APP control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="play_python.html" class="btn btn-neutral float-left" title="小车控制" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="play_python.html" class="btn btn-neutral float-left" title="Play the car with Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

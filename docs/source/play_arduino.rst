@@ -1,9 +1,10 @@
-小车控制
-========
+Play the car with Arduino
+==========================
 
-在这个套件中，一共有两种小车控制方式给arduino用户学习和使用ESP-4WD Car：Code Control和APP Control。
-你可以直接用arduino代码来控制小车，或者diy一个遥控器来控制小车，但是在你阅读APP Control之前，请你先阅读Code Control
-的内容，以了解ESP-4WD Car的基本使用方式。
+There are two ways to play for arduino users to learn and use ESP-4WD Car: Code Control and APP Control.
+You can directly use arduino code to control the car, or DIY a remote control.
+
+It should be noted that before using APP Control, you need to understand Code Control first.
 
 .. toctree::
   :maxdepth: 2

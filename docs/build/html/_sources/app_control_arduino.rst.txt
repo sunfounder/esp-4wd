@@ -1,25 +1,12 @@
 APP control
 ============
 
-In this chapter,你将学习使用Sunfounder Controller这款遥控器软件，并在Sunfounder Controller上diy一个遥控器来
-控制小车。
-
-.. toctree::
-  :maxdepth: 2
-
-  Install Sunfounder Controller
-  About Sunfounder Controller
-  Establish communication
-  APP操作
-  DIY遥控器
-
-  
+In this chapter, you will learn to use a APP - Sunfounder Controller to control the car.
 
 Install Sunfounder Controller
 -------------------------------
 
-Open App Store (iOS/Mac OS X system) or Play Store (Android/Windows/Linux
-system), then search and download Sunfounder Controller.
+Open App Store (iOS/Mac OS X system) or Play Store (Android/Windows/Linux system), then search and download Sunfounder Controller.
 
 .. image:: img/arduino_app1.png
   :width: 500
@@ -44,7 +31,7 @@ Click the middle button to add a new controller.
   :align: center
 
 Sunfounder Controller is a platform that can add custom remote control handles. It
-reserves many control interfaces. There are a total of 17 areas from A to Q. Each area
+reserves many widget interfaces. There are a total of 17 areas from A to Q. Each area
 has selectable widgets.
 
 .. image:: img/arduino_app4.png
@@ -108,17 +95,17 @@ corner.
   :width: 700
   :align: center
 
-Establish communication
+Establish Communication
 ------------------------
 
 In addition to the Arduino control method, we also provide the APP control method.
 You can open Sunfounder Controller on mobile phones, tablets and other devices,
 and then make a controller to control ESP-4WD Car.
 
-运行代码
-^^^^^^^^^
+Run the code
+^^^^^^^^^^^^^^
 
-Open the 8.app_control.ino file in the esp-4wd\example\Arduino\8.app_control path.
+Open the ``8.app_control.ino`` file in the ``esp-4wd\example\Arduino\8.app_control`` path.
 
 .. image:: img/arduino_app11.png
   :width: 180
@@ -132,19 +119,21 @@ and ESP32 RDP: One is AP mode, the other is STA mode. We can switch the
 communication mode by modifying the code of app_control.ino.
 
 If you want to use AP mode, you need to connect Sunfounder Contorller to the hotspot released by ESP32 RDP. 
-Move the code to line 6, please set SSID and PSK here.（代码中的NAME既是SSID，同时也是小车的名字） If you have 
+Move the code to line 6, please set SSID and PSK here (The NAME in the code is both the SSID and the name of the car). If you have 
 more than one EPS-4WD Cars, you need to set different NAMEs for them to avoid a wrong connection. 
 In addition, you need to set a password of more than 8 digits.
 
 .. code-block:: c
+
     #define NAME "ESP-4WD Car"
     #define AP_PASSWORD "123456789"
 
 **Note: Click File -> Preferences, and then select the Display line numbers option to display the number of lines of arduino code.**
 
-Then modify the content of line 10 and define the SWITCH_MODE variable as "ap".
+Then modify the content of line 10 and define the ``SWITCH_MODE`` variable as "ap".
 
 .. code-block:: c
+
     #define SWITCH_MODE "ap"
 
 After downloading the code, ESP32 RDP will send a hotspot signal, then take out your
@@ -155,19 +144,19 @@ network.
   :width: 400
   :align: center
 
-打开Sunfounder Controller，点击右上方的连接图标。
+Open Sunfounder Controller and click the Connect icon on the top right.
 
 .. image:: img/arduino_app_new1.png
   :width: 300
   :align: center
 
-连接成功会出现提示框。
+A prompt box will appear if the connection is successful.
 
 .. image:: img/arduino_app_new2.png
   :width: 400
   :align: center
 
-并且在sunfounder的界面上会显示小车的名字。
+And the name of the car will be displayed on APP.
 
 .. image:: img/arduino_app_new3.png
   :width: 300
@@ -182,50 +171,51 @@ RDP will search for and connect to this wifi, and at the same time your electron
 device should connect to this wifi.
 
 .. code-block:: c
+
     #define STA_NAME "MakerStarsHall"
     #define STA_PASSWORD "sunfounder"
 
-Then modify the content of line 10 and define the SWITCH_MODE variable as "sta".
+Then modify the content of line 10 and define the ``SWITCH_MODE`` variable as "sta".
 
 .. code-block:: c
+
     #define SWITCH_MODE "sta"
 
-After downloading the code, ESP32 RDP will automatically connect to the wifi network
-, and at the same time take out your electronic device, open the WLAN management interface 
+After downloading the code, ESP32 RDP will automatically connect to the wifi network, and at the same time take out your electronic device, open the WLAN management interface 
 and connect to this wifi network.
 
 .. image:: img/arduino_app13.png
   :width: 400
   :align: center
 
-打开Sunfounder Controller，点击右上方的连接图标。
+Open Sunfounder Controller and click the Connect icon on the top right.
 
 .. image:: img/arduino_app_new1.png
   :width: 300
   :align: center
 
-在弹出的确认框中找到小车名字，点击它。
+Find the car name in the pop-up window and click on it.
 
 .. image:: img/arduino_app_new4.png
   :width: 450
   :align: center
 
-连接成功后，在sunfounder的界面上会显示小车的名字。
+After connecting, the name of the car will be displayed on APP.
 
 .. image:: img/arduino_app_new3.png
   :width: 300
   :align: center
 
-APP操作
---------
+APP Operation
+--------------------
 
 Download this code, and then using any of the above methods to establish
 communication.
 
-添加按键
-^^^^^^^^^
+Add Widget
+^^^^^^^^^^^^^^^^^
 
-Open Sunfounder Controller, and then 创建 an empty controller.
+Open Sunfounder Controller, and then create an empty controller.
 
 .. image:: img/arduino_app3.png
   :width: 450
@@ -257,22 +247,23 @@ Widget M is used to control the on and off of the RGB board.
   :width: 450
   :align: center
 
-DIY遥控器
-----------
+DIY Remote Control
+-----------------------
 
-如果你想要DIY一个新的遥控器，你需要了解ESP32 RDP和Sunfounder Controller之间的通信过程。Open the 
-9.test_control.ino file in the esp-4wd\Arduino\example\9.test_control. 你将通过这个代码来了解它们之间的通信。
+If you want to DIY a new remote control, you need to understand the communication process between the ESP32 RDP and the Sunfounder Controller. open the 
+``9.test_control.ino`` file in the ``esp-4wd\Arduino\example\9.test_control``. You will go through this code to see how they communicate with each other.
 
 Program framework
 ^^^^^^^^^^^^^^^^^^^
 
 First, let us understand the general operating framework of the program.
 
-Turn the code to line 103. In setup(), the temp_data variable defines the device
+Turn the code to line 103. In ``setup()``, the temp_data variable defines the device
 information and proofreading information of ESP-4WD Car, and sends it to
-Sunfounder Controller through the deserializeJson() function.
+Sunfounder Controller through the ``deserializeJson()`` function.
 
 .. code-block:: c
+
     void setup() {
         String stringone = "{\'Name\':\"";
         String stringtwo = "\", \'Type\':\"ESP-4WD Car\", \'Check\':\"SunFounder Controller\"}";
@@ -281,7 +272,7 @@ Sunfounder Controller through the deserializeJson() function.
 
 This if statement is used to determine the communication mode between ESP32 RDP
 and Sunfounder Controller. You can change the communication mode by modifying
-SWITCH_MODE.
+``SWITCH_MODE``.
 
 .. code-block:: c
 
@@ -304,19 +295,19 @@ the event processing process.
     webSocket.begin(); 
     webSocket.onEvent(onWebSocketEvent);
 
-Then, we turn the code to line 26, onWebSocketEvent() is the event handling function,
+Then, we turn the code to line 26, ``onWebSocketEvent()`` is the event handling function,
 which uses the switch statement to determine the event type. The event types that
-the current program can trigger are WStype_DISCONNECTED, WStype_CONNECTED,
-and WStype_TEXT.
+the current program can trigger are ``WStype_DISCONNECTED``, ``WStype_CONNECTED``,
+and ``WStype_TEXT``.
 
-WStype_DISCONNECTED is a disconnected event. The processing method is to print
+``WStype_DISCONNECTED`` is a disconnected event. The processing method is to print
 the disconnected information.
 
-WStype_CONNECTED is a connected event. The processing method is to print
+``WStype_CONNECTED`` is a connected event. The processing method is to print
 the connection information, and then send the device information to Sunfounder
 Controller.
 
-WStype_TEXT is a sending and receiving event, and we will process the received and
+``WStype_TEXT`` is a sending and receiving event, and we will process the received and
 sent string information in this event.
 
 .. code-block:: c
@@ -347,18 +338,17 @@ sent string information in this event.
         case WStype_TEXT:
             ...
 
-By modifying the content of the WStype_TEXT event, we
+By modifying the content of the ``WStype_TEXT`` event, we
 can understand the data receiving and sending process between ESP-4WD Car and
 Sunfounder Controller.
 
-接收过程
-^^^^^^^^^
+Receiving
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-在ESP32 RDP会与Sunfounder Controller的通信过程会产生数据交互，ESP32 RDP既会接收来自Sunfounder Controller的数据，
-也会将自身的传感器数据发送给Sunfounder Controller。所以我们先来了解一下ESP32 RDP从Sunfounder Controller接收了
-哪些数据。
+The ESP32 RDP receives data from the Sunfounder Controller and sends its own sensor data to the Sunfounder Controller.
+Let's find out what data ESP32 RDP receives from Sunfounder Controller.
 
-**Step 1:创建遥控器**
+**Step 1: Create a remote control**
 
 Download this code, re-establish communication, and then open Sunfounder Controller to create 
 a new controller. We add a slider in the H area and a cross-shaped steering wheel in the K area. After
@@ -368,7 +358,7 @@ adding, click the icon in the upper right corner to save.
   :width: 450
   :align: center
 
-**Step 2:小车接收控件的值**
+**Step 2: Received values**
 
 Turn the code to line 53, in this if statement, we print out the string data (payload
 variable) received from Sunfounder Controller.
@@ -395,7 +385,7 @@ control is the string "stop", and the initial data of H widget is the int value 
   :width: 450
   :align: center
 
-按住K区域的cross-shaped steering wheel的不同方向键，并且滑动H区域的slider。
+Press the arrow keys of the cross-shaped steering wheel in the K area and slide the slider in the H area.
 
 .. image:: img/arduino_app19.png
   :width: 450
@@ -409,45 +399,45 @@ wheel widget sends a string of data ("forward", "backward", "left", "right") to 
   :width: 450
   :align: center
 
-**Step 3:小车响应**
+**Step 3: Response**
 
-当ESP-4WD Car接收到来自Sunfounder Controller不同控件的数据时，它需要做出相应的响应。
+When ESP-4WD Car receives data from different controls of Sunfounder Controller, it needs to respond accordingly.
 Let’s write a piece of code that uses the widgets on the Sunfounder Controller 
 to control the movement of the car. The K widget(cross-shaped steering wheel) controls
 the direction of the car, and the H widget(slider) controls the speed of the car.
 
-By modifying the content of the WStype_TEXT event, 我们可以实现用Sunfounder Controller的控件来控制小车的移动。
-Turn the code to line 62，我们将以下代码添加在这一行里。
+By modifying the content of the ``WStype_TEXT`` event, we can use the Sunfounder Controller widget to control the movement of the cart.
+Turn the code to line 62, we add the following code in this line.
 
 .. code-block:: c
 
     car.move(doc_recv["K_region"], doc_recv["H_region"]);
 
-添加完成后，我们来解释一下content of the WStype_TEXT event。（有部分被注释的内容未展示，请不要将它们删除。）
+After adding it, let's get to know the content of the ``WStype_TEXT`` event. (There are some commented contents not shown, please don't remove them.
 
 .. code-block:: c
-    :emphasize-lines:8,9
+  :emphasize-lines: 8,9
 
-    case WStype_TEXT:
-        if(strcmp((char * )payload, temp_recv) != 0) 
-        {
-        memset(temp_recv, 0, 300);
-        Serial.printf(" Received text: %s\n", payload);
-        memcpy(temp_recv, (char *)payload, strlen((char *)payload));
+  case WStype_TEXT:
+      if(strcmp((char * )payload, temp_recv) != 0) 
+      {
+          memset(temp_recv, 0, 300);
+          Serial.printf(" Received text: %s\n", payload);
+          memcpy(temp_recv, (char *)payload, strlen((char *)payload));
+      }
+      deserializeJson(doc_recv, payload);
+      car.move(doc_recv["K_region"], doc_recv["H_region"]);
+      serializeJson(doc_send, output);
+      if(strcmp(output, temp_send) != 0) 
+      {
+          memset(temp_send, 0, 300);
+          Serial.printf(" Send text: %s\n", output);
+          memcpy(temp_send, output, strlen(output));
         }
-        deserializeJson(doc_recv, payload);
-        car.move(doc_recv["K_region"], doc_recv["H_region"]);
-        serializeJson(doc_send, output);
-        if(strcmp(output, temp_send) != 0) 
-        {
-        memset(temp_send, 0, 300);
-        Serial.printf(" Send text: %s\n", output);
-        memcpy(temp_send, output, strlen(output));
-        }
-        webSocket.sendTXT(client_num, output);     
-        break;
+      webSocket.sendTXT(client_num, output);     
+      break;
 
-解释content of the WStype_TEXT event之前，turn the code to line 19, where a global variable doc_recv that 
+before we get to know the content of the ``WStype_TEXT`` event，turn the code to line 19, where a global variable ``doc_recv`` that 
 can store json objects(similar to the structure of C language) is defined, which is used to receive string 
 data from Sunfounder Controller.
 
@@ -455,20 +445,20 @@ data from Sunfounder Controller.
 
     DynamicJsonDocument doc_recv(1024);
 
-回到WStype_TEXT event, Through the function deserializeJson( ), the payload variable (the string data
-received from the Sunfounder Controller) is converted into an operable doc_recv variable.
+Go back to ``WStype_TEXT`` event, Through the function ``deserializeJson( )``, the payload variable (the string data
+received from the Sunfounder Controller) is converted into an operable ``doc_recv`` variable.
 
 .. code-block:: c
 
     deserializeJson(doc_recv, payload);
 
-The value of doc_recv["K_region"] is the string data ("forward", "backward","left",
+The value of ``doc_recv["K_region"]`` is the string data ("forward", "backward","left",
 "right") sent by the K widget (cross-shaped steering wheel), the same as the value of
-doc_recv["H_region"] is the int data sent by H widget (slide) (range: 0-100).
+``doc_recv["H_region"]`` is the int data sent by H widget (slide) (range: 0-100).
 
-Pass doc_recv["K_region"] as the first parameter to the car.move() function to control
-the direction of the ESP-4WD Car. Pass doc_recv["H_region"] as the second parameter
-to the car.move() function to control the speed of ESP-4WD Car.
+Pass ``doc_recv["K_region"]`` as the first parameter to the ``car.move()`` function to control
+the direction of the ESP-4WD Car. Pass ``doc_recv["H_region"]`` as the second parameter
+to the ``car.move()`` function to control the speed of ESP-4WD Car.
 
 .. code-block:: c
 
@@ -483,21 +473,21 @@ The cross-shaped steering wheel in the K area can control the direction of the E
   :width: 250
   :align: center
 
-发送过程
+Sending
 ^^^^^^^^^
 
-我们再来了解一下ESP32 RDP是如何将自身的传感器数据发送给Sunfounder Controller。
+Let's take a closer look at how the ESP32 RDP sends its own sensor data to the Sunfounder Controller.
 
-**Step 1:创建遥控器**
+**Step 1: Create a remote control**
 
-回到WStype_TEXT event, delete the comment symbol in lines 67-71，让这段代码重新启用。
+Go back to ``WStype_TEXT`` event, cancel the comment in lines 67-71, to enable this code.
 
 .. code-block:: c
 
     car.get_grayscale();
     for(int i = 0; i < 3; i++)
     {
-    doc_send["L_region"][i] = car.adc_value[i];
+        doc_send["L_region"][i] = car.adc_value[i];
     }
 
 Download this code, re-establish communication, and then open Sunfounder Controller to create 
@@ -508,7 +498,7 @@ click the icon in the upper right corner to save.
   :width: 450
   :align: center
 
-**Step 2:小车接收控件的值**
+**Step 2: Received values**
 
 Turn the code to line 77. In this if statement, we print the output variable (the string
 information that stores the sensor data).
@@ -536,41 +526,41 @@ the Sunfounder Controller.
   :width: 450
   :align: center
 
-**Step 3:小车响应**
+**Step 3: Response**
 
 Let's write a piece of code that display the sensor data of ESP-4WD RDP on the
-widget of Sunfounder Controller.Widget D (grayscale detection tool)将会根据检测到的灰度值显示地面情况。
+widget of Sunfounder Controller. Widget D (grayscale detection tool) will show you the grayscale of the ground.
 
-让我们来重新解释一下content of the WStype_TEXT event。（有部分被注释的内容未展示，请不要将它们删除。）
+Let's re-explain the content of the ``WStype_TEXT`` event. 
 
 .. code-block:: c
-    :emphasize-lines:11,12,13,14,15,16,17,18,19,20,21,22,23
+  :emphasize-lines: 11,12,13,14,15,16,17,18,19,20,21,22,23
 
-    case WStype_TEXT:
-        if(strcmp((char * )payload, temp_recv) != 0) 
-        {
-        memset(temp_recv, 0, 300);
-        Serial.printf(" Received text: %s\n", payload);
-        memcpy(temp_recv, (char *)payload, strlen((char *)payload));
-        }
-        deserializeJson(doc_recv, payload);
-        car.move(doc_recv["K_region"], doc_recv["H_region"]);
-        car.get_grayscale();
-        for(int i = 0; i < 3; i++)
-        {
-            doc_send["L_region"][i] = car.adc_value[i];
-        }
-        serializeJson(doc_send, output);
-        if(strcmp(output, temp_send) != 0) 
-        {
-        memset(temp_send, 0, 300);
-        Serial.printf(" Send text: %s\n", output);
-        memcpy(temp_send, output, strlen(output));
-        }
-        webSocket.sendTXT(client_num, output);     
-        break;
+  case WStype_TEXT:
+      if(strcmp((char * )payload, temp_recv) != 0) 
+      {
+          memset(temp_recv, 0, 300);
+          Serial.printf(" Received text: %s\n", payload);
+          memcpy(temp_recv, (char *)payload, strlen((char *)payload));
+      }
+      deserializeJson(doc_recv, payload);
+      car.move(doc_recv["K_region"], doc_recv["H_region"]);
+      car.get_grayscale();
+      for(int i = 0; i < 3; i++)
+      {
+          doc_send["L_region"][i] = car.adc_value[i];
+      }
+      serializeJson(doc_send, output);
+      if(strcmp(output, temp_send) != 0) 
+      {
+          memset(temp_send, 0, 300);
+          Serial.printf(" Send text: %s\n", output);
+          memcpy(temp_send, output, strlen(output));
+      }
+      webSocket.sendTXT(client_num, output);     
+      break;
 
-解释content of the WStype_TEXT event之前，turn the code to line 18, where the global variable doc_send 
+before we get to know the content of the ``WStype_TEXT`` event，turn the code to line 18, where the global variable ``doc_send`` 
 that can store the json object (similar to the structure of the c language) is defined, 
 which is used to send the sensor data of the Sunfounder Controller.
 
@@ -578,8 +568,7 @@ which is used to send the sensor data of the Sunfounder Controller.
 
     DynamicJsonDocument doc_send(1024);
 
-通过car.get_grayscale()函数，我们可以获取灰度传感器检测到的左边值(car.adc_value[0])，
-中间值(car.adc_value[1])和右边值(car.adc_value[2])，并将它们依次储存在doc_send["L_region"]里。
+With the ``car.get_grayscale()`` function, we can get the detection values of the three probes of the grayscale sensor. From left to right, they are ``car.adc_value[0]`` , ``car.adc_value[1]`` and ``car.adc_value[2]`` , they are stored in ``doc_send["L_region"]`` in turn.
 
 .. code-block:: c
 
@@ -589,7 +578,7 @@ which is used to send the sensor data of the Sunfounder Controller.
         doc_send["L_region"][i] = car.adc_value[i];
     }
 
-Use the function serializeJson() to convert the doc_send variable (stored sensor
+Use the function ``serializeJson()`` to convert the ``doc_send`` variable (stored sensor
 data) into an output variable (a string type that can be recognized by Sunfounder
 Controller).
 
@@ -597,15 +586,15 @@ Controller).
 
     serializeJson(doc_send, output);
 
-Send the client_num variable (storing the device information and proofreading
+Send the ``client_num`` variable (storing the device information and proofreading
 information of the ESP-4WD RDP) and output variable to Sunfounder Controller.
 
 .. code-block:: c
 
     webSocket.sendTXT(client_num, output); 
 
-回到遥控器界面，Widget D (grayscale detection tool)正在显示当前地面情况，如果想要知道更多关于控件的信息，请回到
-Widget List查看。
+Back in the remote control interface, Widget D (grayscale detection tool) is showing the current ground conditions, if you want to know more about the controls, please go back to
+Widget List to see.
 
 .. image:: img/arduino_app23.png
   :width: 250

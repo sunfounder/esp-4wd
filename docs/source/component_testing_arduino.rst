@@ -1,10 +1,10 @@
-器件测试
-=========
+Component Testing by Arduino
+================================
 
-在组装ESP-4WD Car之前，你需要先对各类器件进行测试来确保它们是正常工作的，如果器件有任何问题，你可以对它们进行校准，或者联系我们更换新的器件。
+Before assembling the ESP-4WD Car, you need to test each device to make sure they are working properly, if there is any problem with the device, please contact us.
 
-连接电源
----------
+Power to ESP32 RDP
+---------------------------
 
 Connect ESP32 RDP to PC.
 
@@ -12,7 +12,7 @@ Connect ESP32 RDP to PC.
   :width: 400
   :align: center
 
-用电池给ESP32 RDP供电。
+Powering ESP32 RDP with batteries.
 
 .. image:: img/arduino_test1.jpg
   :width: 400
@@ -27,11 +27,10 @@ Finishing the wire up according to the diagram.
   :width: 500
   :align: center
 
-Open the 1.move.ino file in the esp-4wd\Arduino\example\1.move path.\(
-你曾经在 `https://github.com/sunfounder/esp-4wd <https://github.com/sunfounder/esp-4wd>`_
-下载过这些文件。如果没有这些文件，请重新下载它们。\)
+Open the ``1.move.ino`` file in the ``esp-4wd\Arduino\example\1.move`` path.
+(You should have downloaded these files at `github <https://github.com/sunfounder/esp-4wd>`_ before.)
 
-select the Board and Port.
+Select the Board and Port.
 **(Board:ESP32 Arduino -> NodeMCU-32S)**
 
 .. image:: img/arduino_setup19.png
@@ -44,7 +43,7 @@ Compile and upload.
   :width: 350
   :align: center
 
-运行代码后，你会看到四个电机一直在转动，并且不断更换转动方向，最后停下来。
+After running the code, you will see the four motors turning and changing the direction of rotation back and forth, and finally stopping.
 
 Test the ultrasonic module
 ---------------------------
@@ -56,7 +55,7 @@ Finishing the wire up according to the diagram.
   :align: center
 
 
-Run the 2.ultrasonic.ino file in the esp-4wd\Arduino\example\2.ultrasonic path. Click the icon in the upper 
+Run the ``2.ultrasonic.ino`` file in the ``esp-4wd\Arduino\example\2.ultrasonic`` path. Click the icon in the upper 
 right corner to open the serial debugging assistant, Set the baud rate to 115200.
 
 .. image:: img/arduino_test3-1.png
@@ -74,13 +73,19 @@ Finishing the wire up according to the diagram.
   :width: 400
   :align: center
 
-Run the 3.grayValue.ino file in the esp-4wd\Arduino\example\3.grayValue path, the serial port of arduino will always print the reading value of the
+Run the ``3.grayValue.ino`` file in the ``esp-4wd\Arduino\example\3.grayValue`` path, the serial port of arduino will always print the reading value of the
 grayscale sensor.
 
-Grayscale sensor module通常会在白色地面上检测到1100以上的数值，在黑色地面上则会检测到900以下的数值，
-在悬崖端会检测到110以下的数值。如果grayscale sensor module检测的数值不正常，你就需要对它进行校准。将grayscale sensor module放在白色地面上，用
-螺丝刀顺时针扭动模块上的旋转按钮，使其检测到的值最大，然后将Grayscale sensor module放在黑色地面上，用螺丝刀逆时针扭动
-模块上的模块上的旋转按钮，使其检测到的值最小，这样就完成了校准。
+When using the Grayscale sensor module, the probe should be about 5 mm from the ground.
+
+Normally, it will detect a value above 1100 on white ground. 
+On black ground, it will detect values below 900. 
+On a cliff, it will detect a value below 110. (If the reading is 0, it means that the probe does not detect the ground.)
+
+If the grayscale sensor module does not detect normal values, you will need to calibrate it.
+
+Hover it over a white ground and twist the potentiometer clockwise so that the reading is greater than 1100 (usually around 1200). Then suspend it on a dark ground and twist the potentiometer counterclockwise so that it is less than 900 (usually between 300 and 600). Repeat this several times to get it to the maximum difference in both cases.
+
 
 .. image:: img/arduino_test4-1.png
   :width: 400
@@ -99,7 +104,7 @@ Finishing the wire up according to the diagram.
   :width: 400
   :align: center
 
-Run the 4.flashingLight.ino file in the esp-4wd\Arduino\example\4.flashingLight path, the RGB light under the car flashes every 0.5 seconds and
+Run the ``4.flashingLight.ino`` file in the ``esp-4wd\Arduino\example\4.flashingLight`` path, the RGB light under the car flashes every 0.5 seconds and
 changes color every time it flashes.
 
 Test the servo
@@ -111,5 +116,5 @@ Finishing the wire up according to the diagram.
   :width: 400
   :align: center
 
-Run the Servo.ino file in the esp-4wd\Arduino\example\Servo path, 舵机将会先左转30度，然后右转30度，最后回到0度位置。保留这个0度位置不变，然后进行对ESP-4WD Car的组装。
+Run the ``Servo.ino`` file in the ``esp-4wd\Arduino\example\Servo`` path. The servo will first turn 30 degrees left, then 30 degrees right, and finally return to 0 degrees.
 

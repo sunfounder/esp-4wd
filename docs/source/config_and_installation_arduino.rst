@@ -1,24 +1,13 @@
-软件配置和安装
-===============
+Setup Your Arduino
+================================
 
 Before you start using the kit, you need to complete the following steps.
-
-.. toctree::
-    :maxdepth: 1
-
-    Download the Files
-    Install Arduino IDE
-    Import Sunfounder Remote Control Supporter
-    Install ESP32 board
-    Include library
-    Install driver
-    Download the code
 
 Download the Files
 --------------------
 
 Go to `https://github.com/sunfounder/esp-4wd <https://github.com/sunfounder/esp-4wd>`_
-download the ZIP files.Unzip the downloaded ZIP file and you will get the esp-4wd (esp-4wd-master) folder.
+download the ZIP files. Unzip the downloaded ZIP file and you will get the esp-4wd (esp-4wd-master) folder.
 
 .. image:: img/arduino_setup2.png
   :width: 300

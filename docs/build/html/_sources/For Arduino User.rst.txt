@@ -1,7 +1,9 @@
 For Arduino User
 ======================
 
-欢迎阅读ESP-4WD Car的arduino教学内容。在本章节中，你将学习如何通过在arduino上编写代码来控制小车。此外，你将学会在Sunfounder Controller上DIY一个新的遥控器来控制小车。（如果你是ESP-4WD Car的新用户，请按照章节顺序进行阅读。）
+Welcome to the guide of ESP-4WD Car (arduino version). In this chapter, you will learn how to control the car by writing arduino code.
+
+In addition, you will learn to play with the car by DIY a remote control on Sunfounder Controller.
 
 .. toctree::
     :maxdepth: 1
