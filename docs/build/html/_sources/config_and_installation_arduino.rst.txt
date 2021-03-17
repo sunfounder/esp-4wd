@@ -112,7 +112,7 @@ Install driver
 
 Connect ESP32 RDP to PC.
 
-.. image:: img/arduino_setup13.png
+.. image:: img/arduino_setup13_.png
   :width: 400
   :align: center
 

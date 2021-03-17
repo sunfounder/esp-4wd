@@ -182,7 +182,7 @@ Then modify the content of line 14 and define the ``SWITCH_MODE`` variable as "s
 After downloading the code, ESP32 RDP will automatically connect to the wifi network, and at the same time take out your electronic device, open the WLAN management interface 
 and connect to this wifi network.
 
-.. image:: img/arduino_app13.png
+.. image:: img/arduino_app13_.png
   :width: 400
   :align: center
 
@@ -222,7 +222,7 @@ Open Sunfounder Controller, and then create an empty controller.
 As shown in the figure, select the corresponding widget for the controller. After
 adding, click the icon in the upper right corner to save the configuration.
 
-.. image:: img/arduino_app14.png
+.. image:: img/arduino_app14_.png
   :width: 450
   :align: center
 
@@ -282,7 +282,7 @@ Controller.
                 write()
             time.sleep_ms(15)
 
-Open the ws.py file, turn the code to line 87, in the ``start()`` function, we switch the
+Open the ``ws.py`` file, turn the code to line 87, in the ``start()`` function, we switch the
 communication mode by judging the value of ``SWITCH_MODE`` .
 
 .. code-block:: python
