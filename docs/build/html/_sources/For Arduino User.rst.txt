@@ -8,7 +8,7 @@ In addition, you will learn to play with the car by DIY a remote control on Sunf
 .. toctree::
     :maxdepth: 1
 
-    config_and_installation_arduino
+    set_up_your_arduino
     component_testing_arduino
     hardware_assembly_arduino
     play_arduino

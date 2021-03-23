@@ -1,16 +1,15 @@
 Setup Your Arduino
 ================================
 
-Before you start using the kit, you need to complete the following steps.
+Before you can start using the kit, you will need to complete the following steps.
 
-Download the Files
---------------------
+Download the ESP-4WD Code
+-------------------------------------
 
-Go to `https://github.com/sunfounder/esp-4wd <https://github.com/sunfounder/esp-4wd>`_
-download the ZIP files. Unzip the downloaded ZIP file and you will get the esp-4wd (esp-4wd-master) folder.
+Click `here <https://github.com/sunfounder/esp-4wd>`_ to download the ESP-4WD code. After unzipping the zip file you have downloaded, you will see all the relevant files for the ESP-4WD.
 
 .. image:: img/arduino_setup2.png
-  :width: 300
+  :width: 400
   :align: center
 
 Install Arduino IDE
