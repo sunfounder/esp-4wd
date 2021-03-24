@@ -1,0 +1,25 @@
+{
+    "name": "ESP32 RDP",
+    "description": "ESP32 Robot Development Platform",
+    "keywords": "robot, sunfounder, websocket",
+    "authors": [
+        {
+            "name": "SunFounder",
+            "url": "https://github.com/sunfounder",
+            "maintainer": true
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sunfounder/esp-4wd.git"
+    },
+    "version": "1.0.0",
+    "license": "GNU",
+    "export": {
+        "exclude": [
+            ""
+        ]
+    },
+    "frameworks": "arduino",
+    "platforms": "espressif32"
+}
