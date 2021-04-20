@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Component Testing by Python &mdash; SunFounder ESP-4WD Car Kit  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Hardware Assembling" href="hardware_assembly_python.html" />
+    <link rel="prev" title="Setup Your Python" href="config_and_installation_python.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder ESP-4WD Car Kit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_esp32_rdp.html">Introduction to ESP32 RDP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">Components List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_arduino_user.html">For Arduino User</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="for_python_user.html">For Python User</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="config_and_installation_python.html">Setup Your Python</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Component Testing by Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#power-to-esp32-rdp">Power to ESP32 RDP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-motor">Test the Motor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-ultrasonic-module">Test the Ultrasonic Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-grayscale-sensor-module">Test the Grayscale Sensor Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-rgb-board">Test the RGB Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-servo">Test the Servo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_assembly_python.html">Hardware Assembling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="play_python.html">Play the car with Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder ESP-4WD Car Kit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="for_python_user.html">For Python User</a> &raquo;</li>
+        
+      <li>Component Testing by Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/component_testing_python.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="component-testing-by-python">
+<h1>Component Testing by Python<a class="headerlink" href="#component-testing-by-python" title="Permalink to this headline">¶</a></h1>
+<p>Before assembling the ESP-4WD Car, you need to test each device to make sure they are working properly, if there is any problem with the device, please contact us.</p>
+<div class="section" id="power-to-esp32-rdp">
+<h2>Power to ESP32 RDP<a class="headerlink" href="#power-to-esp32-rdp" title="Permalink to this headline">¶</a></h2>
+<p>Connect ESP32 RDP to PC.</p>
+<a class="reference internal image-reference" href="_images/arduino_setup13_.png"><img alt="_images/arduino_setup13_.png" class="align-center" src="_images/arduino_setup13_.png" style="width: 400px;" /></a>
+<p>Powering ESP32 RDP with batteries.</p>
+<a class="reference internal image-reference" href="_images/arduino_test1.jpg"><img alt="_images/arduino_test1.jpg" class="align-center" src="_images/arduino_test1.jpg" style="width: 400px;" /></a>
+</div>
+<div class="section" id="test-the-motor">
+<h2>Test the Motor<a class="headerlink" href="#test-the-motor" title="Permalink to this headline">¶</a></h2>
+<p>Finishing the wire up according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test2.png"><img alt="_images/arduino_test2.png" class="align-center" src="_images/arduino_test2.png" style="width: 500px;" /></a>
+<p>Double-click the <code class="docutils literal notranslate"><span class="pre">move.py</span></code> file in the MicroPython device window.
+Click the green icon at the top left to run the current script, and then
+click the red icon next to it to stop the current script.</p>
+<a class="reference internal image-reference" href="_images/python_setup16.png"><img alt="_images/python_setup16.png" class="align-center" src="_images/python_setup16.png" style="width: 450px;" /></a>
+<p>After running the code, you will see the four motors turning and changing the direction of rotation back and forth, and finally stopping.</p>
+</div>
+<div class="section" id="test-the-ultrasonic-module">
+<h2>Test the Ultrasonic Module<a class="headerlink" href="#test-the-ultrasonic-module" title="Permalink to this headline">¶</a></h2>
+<p>Finishing the wire up according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test3.png"><img alt="_images/arduino_test3.png" class="align-center" src="_images/arduino_test3.png" style="width: 400px;" /></a>
+<p>There is a Shell window under Thonny, where you can view running information, error
+information and print information.</p>
+<a class="reference internal image-reference" href="_images/python_setup17.png"><img alt="_images/python_setup17.png" class="align-center" src="_images/python_setup17.png" style="width: 450px;" /></a>
+<p>Run <code class="docutils literal notranslate"><span class="pre">ultrasonic.py</span></code>, the Shell window under Thonny will always print the distance value read
+by the ultrasonic module.</p>
+</div>
+<div class="section" id="test-the-grayscale-sensor-module">
+<h2>Test the Grayscale Sensor Module<a class="headerlink" href="#test-the-grayscale-sensor-module" title="Permalink to this headline">¶</a></h2>
+<p>Finishing the wire up according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test4.png"><img alt="_images/arduino_test4.png" class="align-center" src="_images/arduino_test4.png" style="width: 400px;" /></a>
+<p>Run <code class="docutils literal notranslate"><span class="pre">grayValue.py</span></code>, the Shell window under Thonny will always print the reading value of the
+grayscale sensor.</p>
+<p>When using the grayscale sensor module, the probe should be about 5 mm from the ground.</p>
+<p>Normally, it will detect a value above 1100 on white ground.
+On black ground, it will detect values below 900.
+On a cliff, it will detect a value below 110. (If the reading is 0, it means that the probe does not detect the ground.)</p>
+<p>If the grayscale sensor module does not detect normal values, you will need to calibrate it.</p>
+<p>Hover it over a white ground and twist the potentiometer clockwise so that the reading is greater than 1100 (usually around 1200). Then suspend it on a dark ground and twist the potentiometer counterclockwise so that it is less than 900 (usually between 300 and 600). Repeat this several times to get it to the maximum difference in both cases.</p>
+<a class="reference internal image-reference" href="_images/arduino_test4-1_.png"><img alt="_images/arduino_test4-1_.png" class="align-center" src="_images/arduino_test4-1_.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="test-the-rgb-board">
+<h2>Test the RGB Board<a class="headerlink" href="#test-the-rgb-board" title="Permalink to this headline">¶</a></h2>
+<p>Finishing the wire up according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test5.jpg"><img alt="_images/arduino_test5.jpg" class="align-center" src="_images/arduino_test5.jpg" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/arduino_test6.png"><img alt="_images/arduino_test6.png" class="align-center" src="_images/arduino_test6.png" style="width: 400px;" /></a>
+<p>Run <code class="docutils literal notranslate"><span class="pre">flashingLight.py</span></code>, the RGB light under the car flashes every 0.5 seconds and
+changes color every time it flashes.</p>
+</div>
+<div class="section" id="test-the-servo">
+<h2>Test the Servo<a class="headerlink" href="#test-the-servo" title="Permalink to this headline">¶</a></h2>
+<p>Finishing the wire up according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test7.png"><img alt="_images/arduino_test7.png" class="align-center" src="_images/arduino_test7.png" style="width: 400px;" /></a>
+<p>Run <code class="docutils literal notranslate"><span class="pre">servo.py</span></code>. The servo will first turn 30 degrees left, then 30 degrees right, and finally return to 0 degrees.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="hardware_assembly_python.html" class="btn btn-neutral float-right" title="Hardware Assembling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="config_and_installation_python.html" class="btn btn-neutral float-left" title="Setup Your Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

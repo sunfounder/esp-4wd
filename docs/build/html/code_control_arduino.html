@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Code Control &mdash; SunFounder ESP-4WD Car Kit  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="APP Control" href="app_control_arduino.html" />
+    <link rel="prev" title="Play the Car with Arduino" href="play_the_car_with_arduino.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder ESP-4WD Car Kit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_esp32_rdp.html">Introduction to ESP32 RDP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">Components List</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="for_arduino_user.html">For Arduino User</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="preparations_arduino.html">Preparations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_the_components_with_arduino.html">Test the Components with Arduino</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_assembly_arduino.html">Hardware Assembling</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="play_the_car_with_arduino.html">Play the Car with Arduino</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Code Control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#waterfalllight">waterfallLight</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#measurespeed">measureSpeed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#moreplay">morePlay</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="app_control_arduino.html">APP Control</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder ESP-4WD Car Kit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="for_arduino_user.html">For Arduino User</a> &raquo;</li>
+        
+          <li><a href="play_the_car_with_arduino.html">Play the Car with Arduino</a> &raquo;</li>
+        
+      <li>Code Control</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/code_control_arduino.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="code-control">
+<h1>Code Control<a class="headerlink" href="#code-control" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter you will learn to control the ESP-4WD car with Arduino codes.</p>
+<p>You can copy the code below into the Arduino IDE or directly open the code fileunder the path <code class="docutils literal notranslate"><span class="pre">esp-4wd\Micropython\esp_rdp\examples</span></code>.</p>
+<p>1-4 and servo code files have been used in the chapter <a class="reference internal" href="test_the_components_with_arduino.html#test-the-components-with-arduino"><span class="std std-ref">Test the Components with Arduino</span></a>, just for simple testing of motor, ultrasonic module, Grayscale Sensor Module, 8-bit RGB board and Servo.</p>
+<p>Here, we focus on the three codes of 5-7.</p>
+<p>In addition, the 8 and 9 code files are used in the <a class="reference internal" href="app_control_arduino.html#app-control-arduino"><span class="std std-ref">APP Control</span></a> chapter, and will not be explained here.</p>
+<div class="section" id="waterfalllight">
+<h2>waterfallLight<a class="headerlink" href="#waterfalllight" title="Permalink to this headline">¶</a></h2>
+<p>After running <code class="docutils literal notranslate"><span class="pre">5.waterfallLight.ino</span></code>, the LEDs on the 8-bit RGB board under the car will turn on in random colors from the first to the 24th , and then turn off one by one from both ends to the middle.</p>
+<p>After that, the RGB lights will turn on in random colors from the 24th to the first, and then turn off one by one from both ends to the middle.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;ESP32_RDP.h&quot;</span><span class="cp"></span>
+
+<span class="n">ESP32car</span> <span class="n">car</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">red</span> <span class="o">=</span> <span class="n">random</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">green</span> <span class="o">=</span> <span class="n">random</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">blue</span> <span class="o">=</span> <span class="n">random</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">24</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">car</span><span class="p">.</span><span class="n">set_num_light</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">);</span>
+        <span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">23</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">11</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">23</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span>
+        <span class="n">car</span><span class="p">.</span><span class="n">set_num_light</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">car</span><span class="p">.</span><span class="n">set_num_light</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">delay</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">23</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">car</span><span class="p">.</span><span class="n">set_num_light</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">);</span>
+        <span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">23</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">11</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">23</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span>
+        <span class="n">car</span><span class="p">.</span><span class="n">set_num_light</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">car</span><span class="p">.</span><span class="n">set_num_light</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">delay</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The statement to light up the LED is <code class="docutils literal notranslate"><span class="pre">car.set_num_light(i,</span> <span class="pre">red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code>; the first
+parameter is the number of the light, and the last three parameters are the RGB value.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">car.set_num_light(4,255,0,0)</span></code> means to make the No. 4 LED light up in
+red.</p>
+<a class="reference internal image-reference" href="_images/led_number.jpg"><img alt="_images/led_number.jpg" class="align-center" src="_images/led_number.jpg" style="width: 600px;" /></a>
+</div>
+<div class="section" id="measurespeed">
+<h2>measureSpeed<a class="headerlink" href="#measurespeed" title="Permalink to this headline">¶</a></h2>
+<p>Run <code class="docutils literal notranslate"><span class="pre">6.measureSpeed.ino</span></code>, the car will move at a random speed, and the 2-ch Photo-
+interrupter module will detect the speed of the car.</p>
+<p>The light emitted from the transmitting end of the 2-ch Photo-interrupter module
+to the receiving end will pass through the Encoding Disk (with 20 holes). When
+the receiving end does not receive the light, it will send a <code class="docutils literal notranslate"><span class="pre">0</span></code> to the microcontroller,
+otherwise it will send a <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>This means that when a total of 20 <code class="docutils literal notranslate"><span class="pre">1</span></code> are detected, the wheel of the car has turned one
+round (a distance of the wheel circumference has been traveled forward).</p>
+<p>In the same way, we can detect the frequency of the <code class="docutils literal notranslate"><span class="pre">1</span></code> received by the
+microcontroller and calculate the speed of the car in cm/s.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;ESP32_RDP.h&quot;</span><span class="cp"></span>
+
+<span class="n">ESP32car</span> <span class="n">car</span><span class="p">;</span>
+
+<span class="cp">#define SPEED_PIN_LEFT    26</span>
+<span class="cp">#define SPEED_PIN_RIGHT    25</span>
+
+<span class="n">hw_timer_t</span> <span class="o">*</span> <span class="n">timer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="k">volatile</span> <span class="kt">uint8_t</span> <span class="n">left_Counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">volatile</span> <span class="kt">uint8_t</span> <span class="n">right_Counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">carSpeed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">on_left_Pin</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">left_Counter</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">on_right_Pin</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">right_Counter</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">IRAM_ATTR</span> <span class="n">onTimer</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="p">(</span><span class="n">left_Counter</span> <span class="o">+</span> <span class="n">right_Counter</span><span class="p">);</span>
+    <span class="n">left_Counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">right_Counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">float</span> <span class="n">get_speed</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">float</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="kt">float</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">/</span> <span class="mf">20.0</span> <span class="o">*</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="mf">3.3</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">SPEED_PIN_LEFT</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+    <span class="n">attachInterrupt</span><span class="p">(</span><span class="n">SPEED_PIN_LEFT</span><span class="p">,</span> <span class="n">on_left_Pin</span><span class="p">,</span> <span class="n">RISING</span><span class="p">);</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">SPEED_PIN_RIGHT</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+    <span class="n">attachInterrupt</span><span class="p">(</span><span class="n">SPEED_PIN_RIGHT</span><span class="p">,</span> <span class="n">on_right_Pin</span><span class="p">,</span> <span class="n">RISING</span><span class="p">);</span>
+    <span class="c1">// Set 80 divider for prescaler (see ESP32 Technical Reference Manual for more</span>
+    <span class="c1">// info).</span>
+    <span class="n">timer</span> <span class="o">=</span> <span class="n">timerBegin</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+    <span class="c1">// Attach onTimer function to our timer.</span>
+    <span class="n">timerAttachInterrupt</span><span class="p">(</span><span class="n">timer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">onTimer</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+    <span class="c1">// Set alarm to call onTimer function every second (value in microseconds).</span>
+    <span class="c1">// Repeat the alarm (third parameter)</span>
+    <span class="n">timerAlarmWrite</span><span class="p">(</span><span class="n">timer</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+    <span class="c1">// Start an alarm</span>
+    <span class="n">timerAlarmEnable</span><span class="p">(</span><span class="n">timer</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">speed</span> <span class="o">=</span> <span class="n">random</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    <span class="n">car</span><span class="p">.</span><span class="n">move</span><span class="p">(</span><span class="s">&quot;forward&quot;</span><span class="p">,</span> <span class="n">speed</span><span class="p">);</span>
+    <span class="n">carSpeed</span> <span class="o">=</span> <span class="n">get_speed</span><span class="p">();</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">carSpeed</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="moreplay">
+<h2>morePlay<a class="headerlink" href="#moreplay" title="Permalink to this headline">¶</a></h2>
+<p>Run <code class="docutils literal notranslate"><span class="pre">7.morePlay.ino</span></code>, this example provides 4 ways to play ESP-4WD car. You can switch
+between different modes by modifying the value of the <strong>mode</strong> variable.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;ESP32_RDP.h&quot;</span><span class="cp"></span>
+
+<span class="n">ESP32car</span> <span class="n">car</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">mode</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+        <span class="n">car</span><span class="p">.</span><span class="n">avoid</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+        <span class="n">car</span><span class="p">.</span><span class="n">follow</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+        <span class="n">car</span><span class="p">.</span><span class="n">is_on_edge</span><span class="p">(</span><span class="mi">110</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
+        <span class="n">car</span><span class="p">.</span><span class="n">track_line</span><span class="p">(</span><span class="mi">400</span> <span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="function-introduction-of-moreplay">
+<h3>Function Introduction of morePlay<a class="headerlink" href="#function-introduction-of-moreplay" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For how the following 4 functions implement the corresponding functions, please refer to <code class="docutils literal notranslate"><span class="pre">ESP32_RDP.cpp</span></code> and <code class="docutils literal notranslate"><span class="pre">ESP32_RDP.h</span></code> under the path <code class="docutils literal notranslate"><span class="pre">esp-4wd\Arduino\esp_rdp\src</span></code>.</p>
+</div>
+<p><strong>avoid()</strong></p>
+<p>The default mode(mode=1) is obstacle avoidance.</p>
+<p><code class="docutils literal notranslate"><span class="pre">avoid(int</span> <span class="pre">ref,</span> <span class="pre">int</span> <span class="pre">speed)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ref</span></code> refers to the reference distance value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed</span></code> refers to the forward speed.</p></li>
+</ul>
+<p>ESP-4WD car will move forward at 30% speed and return the distance state according to the obstacle in front.</p>
+<ul class="simple">
+<li><p>If distance &gt; 40, return the distance state 2, if distance &gt; 10, then return 1, otherwise it will return 0.</p></li>
+<li><p>If the obstacle distance is greater than 40, the car will move forward, otherwise it will turn right.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/arduino_code3.png"><img alt="_images/arduino_code3.png" class="align-center" src="_images/arduino_code3.png" style="width: 500px;" /></a>
+<p><strong>follow()</strong></p>
+<p>Modify the value of the mode variable to 2 so that the mode is set to follow.</p>
+<p><code class="docutils literal notranslate"><span class="pre">follow(int</span> <span class="pre">ref,</span> <span class="pre">int</span> <span class="pre">speed)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ref</span></code> refers to the reference distance value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed</span></code> refers to the forward speed.</p></li>
+</ul>
+<p>ESP-4WD car will move forward at 30% speed and automatically follow objects within 40cm in front.</p>
+<a class="reference internal image-reference" href="_images/arduino_code4.png"><img alt="_images/arduino_code4.png" class="align-center" src="_images/arduino_code4.png" style="width: 500px;" /></a>
+<p><strong>is_on_edge()</strong></p>
+<p>Modify the value of the mode variable to 3 so that the mode is set to cliff detection.</p>
+<p><code class="docutils literal notranslate"><span class="pre">is_on_edge(int</span> <span class="pre">ref)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ref</span></code> refers to the reference gray value.</p></li>
+</ul>
+<p>When ESP-4WD car detects a cliff (a place where the grayscale sensor’s detection value is below 110), it will retreat a certain distance.</p>
+<a class="reference internal image-reference" href="_images/arduino_code5.png"><img alt="_images/arduino_code5.png" class="align-center" src="_images/arduino_code5.png" style="width: 500px;" /></a>
+<p><strong>track_line()</strong></p>
+<p>Modify the value of the mode variable to 4 so that the mode is set to track line.</p>
+<p><code class="docutils literal notranslate"><span class="pre">track_line(int</span> <span class="pre">ref,</span> <span class="pre">int</span> <span class="pre">speed)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ref</span></code> refers to the reference gray value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed</span></code> refers to the forward speed.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can replace <a href="#id1"><span class="problematic" id="id2">``</span></a>ref``(400) with another number, which is the threshold between the black line and the white ground read by the grey scale sensor.</p>
+</div>
+<p>The ESP-4WD car moves along the black line on the white ground.</p>
+<a class="reference internal image-reference" href="_images/arduino_code6.png"><img alt="_images/arduino_code6.png" class="align-center" src="_images/arduino_code6.png" style="width: 500px;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="app_control_arduino.html" class="btn btn-neutral float-right" title="APP Control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="play_the_car_with_arduino.html" class="btn btn-neutral float-left" title="Play the Car with Arduino" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Test the Components with Arduino &mdash; SunFounder ESP-4WD Car Kit  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Hardware Assembling" href="hardware_assembly_arduino.html" />
+    <link rel="prev" title="Preparations" href="preparations_arduino.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder ESP-4WD Car Kit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_esp32_rdp.html">Introduction to ESP32 RDP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">Components List</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="for_arduino_user.html">For Arduino User</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="preparations_arduino.html">Preparations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Test the Components with Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#power-to-esp32-rdp">Power to ESP32 RDP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-motors">Test the Motors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-ultrasonic-module">Test the Ultrasonic Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-grayscale-sensor-module">Test the Grayscale Sensor Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-rgb-board">Test the RGB Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-servo">Test the Servo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_assembly_arduino.html">Hardware Assembling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="play_the_car_with_arduino.html">Play the Car with Arduino</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder ESP-4WD Car Kit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="for_arduino_user.html">For Arduino User</a> &raquo;</li>
+        
+      <li>Test the Components with Arduino</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/test_the_components_with_arduino.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="test-the-components-with-arduino">
+<h1>Test the Components with Arduino<a class="headerlink" href="#test-the-components-with-arduino" title="Permalink to this headline">¶</a></h1>
+<p>Before assembling the ESP-4WD car, you need to test each component to make sure it is working properly. If there are any problems with these components, please contact us.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#arduino-power-to-esp-rdp"><span class="std std-ref">Power to ESP32 RDP</span></a></p></li>
+<li><p><a class="reference internal" href="#arduino-test-the-motors"><span class="std std-ref">Test the Motors</span></a></p></li>
+<li><p><a class="reference internal" href="#arduino-test-the-ultrasonic-module"><span class="std std-ref">Test the Ultrasonic Module</span></a></p></li>
+<li><p><a class="reference internal" href="#arduino-test-the-grayscale-sensor-module"><span class="std std-ref">Test the Grayscale Sensor Module</span></a></p></li>
+<li><p><a class="reference internal" href="#arduino-test-the-rgb-board"><span class="std std-ref">Test the RGB Board</span></a></p></li>
+<li><p><a class="reference internal" href="#arduino-test-the-servo"><span class="std std-ref">Test the Servo</span></a></p></li>
+</ul>
+<div class="section" id="power-to-esp32-rdp">
+<span id="arduino-power-to-esp-rdp"></span><h2>Power to ESP32 RDP<a class="headerlink" href="#power-to-esp32-rdp" title="Permalink to this headline">¶</a></h2>
+<p>In order to upload the code to the ESP32 RDP, you need to connect it to the computer with a Type-C USB cable.</p>
+<a class="reference internal image-reference" href="_images/arduino_setup13_.png"><img alt="_images/arduino_setup13_.png" class="align-center" src="_images/arduino_setup13_.png" style="width: 600px;" /></a>
+<p>Then plug in the battery holder with two batteries to power other components and do not forget to slide the switch to ON.</p>
+<a class="reference internal image-reference" href="_images/arduino_test1.jpg"><img alt="_images/arduino_test1.jpg" class="align-center" src="_images/arduino_test1.jpg" style="width: 600px;" /></a>
+</div>
+<div class="section" id="test-the-motors">
+<span id="arduino-test-the-motors"></span><h2>Test the Motors<a class="headerlink" href="#test-the-motors" title="Permalink to this headline">¶</a></h2>
+<p>Complete the wiring according to the diagram.</p>
+<blockquote>
+<div><img alt="_images/arduino_test2.png" class="align-center" src="_images/arduino_test2.png" />
+</div></blockquote>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">1.move.ino</span></code> file under the path <code class="docutils literal notranslate"><span class="pre">esp-4wd\Arduino\esp_rdp\examples\1.move</span></code>, you should have downloaded <strong>esp-4wd</strong> folder at <a class="reference external" href="https://github.com/sunfounder/esp-4wd">github</a> before.)</p>
+<p>Select your Board in <strong>Tools</strong> &gt; <strong>Board</strong> menu (ESP32 Arduino -&gt; NodeMCU-32S), you need to scroll down several times to find it.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/arduino_setup19.png"><img alt="_images/arduino_setup19.png" class="align-center" src="_images/arduino_setup19.png" style="width: 800px;" /></a>
+</div></blockquote>
+<p>Select the Port.</p>
+<blockquote>
+<div><img alt="_images/arduino_setup019.png" class="align-center" src="_images/arduino_setup019.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you can not see the COM port in the Arduino IDE, you need to check whether the <a class="reference external" href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers">CP210x USB to UART Bridge VCP Drivers</a> is installed successfully, or plug in/out the USB cable multiple times.</p>
+</div>
+</div></blockquote>
+<p>Upload the code to the ESP32 RDP.</p>
+<blockquote>
+<div><img alt="_images/arduino_setup20.png" class="align-center" src="_images/arduino_setup20.png" />
+</div></blockquote>
+<p>After the code upload is complete, you will see that the four motors are rotating and changing the direction of rotation, and finally stop.</p>
+</div>
+<div class="section" id="test-the-ultrasonic-module">
+<span id="arduino-test-the-ultrasonic-module"></span><h2>Test the Ultrasonic Module<a class="headerlink" href="#test-the-ultrasonic-module" title="Permalink to this headline">¶</a></h2>
+<p>Complete the wiring according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test3.png"><img alt="_images/arduino_test3.png" class="align-center" src="_images/arduino_test3.png" style="width: 700px;" /></a>
+<p>Upload the file <code class="docutils literal notranslate"><span class="pre">2.ultrasonic.ino</span></code> under the path <code class="docutils literal notranslate"><span class="pre">esp-4wd\Arduino\esp_rdp\examples\2.ultrasonic</span></code>.
+Click the magnifier icon in the upper right corner to open the Serial Monitor and set the baudrate to 115200.</p>
+<img alt="_images/arduino_test3-1.png" class="align-center" src="_images/arduino_test3-1.png" />
+<p>The Serial Monitor will print the distance value read by the ultrasonic module.</p>
+</div>
+<div class="section" id="test-the-grayscale-sensor-module">
+<span id="arduino-test-the-grayscale-sensor-module"></span><h2>Test the Grayscale Sensor Module<a class="headerlink" href="#test-the-grayscale-sensor-module" title="Permalink to this headline">¶</a></h2>
+<p>Complete the wiring according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test4.png"><img alt="_images/arduino_test4.png" class="align-center" src="_images/arduino_test4.png" style="width: 600px;" /></a>
+<p>After uploading the <code class="docutils literal notranslate"><span class="pre">3.grayValue.ino</span></code> file under the path <code class="docutils literal notranslate"><span class="pre">esp-4wd\Arduino\esp_rdp\examples\3.grayValue</span></code>, the Serial Monitor will print the reading value of the grayscale sensor.</p>
+<ul class="simple">
+<li><p>Normally, it will detect a value above 1500 on white ground.</p></li>
+<li><p>On black ground, it will detect values below 900.</p></li>
+<li><p>On a cliff, it will detect a value below 110.</p></li>
+<li><p>If the reading is 0, it means that the height of the detector is higher than its detection range.</p></li>
+</ul>
+<p>If the grayscale sensor module does not detect normal values, you will need to calibrate it.
+In order to make the calibrated value suitable for the assembled effect, the detector should be about <strong>7mm</strong> from the ground.</p>
+<p>Now, Place it above the white ground and turn the potentiometer clockwise so that the reading is greater than 1100 (usually around 2000-4095).</p>
+<p>Then place it above the dark ground and turn the potentiometer counterclockwise to make it less than 900 (usually between 200 and 600).
+Repeat several times to get the maximum difference in both cases.</p>
+<a class="reference internal image-reference" href="_images/arduino_test4-1_.png"><img alt="_images/arduino_test4-1_.png" class="align-center" src="_images/arduino_test4-1_.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="test-the-rgb-board">
+<span id="arduino-test-the-rgb-board"></span><h2>Test the RGB Board<a class="headerlink" href="#test-the-rgb-board" title="Permalink to this headline">¶</a></h2>
+<p>Complete the wiring according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test5.jpg"><img alt="_images/arduino_test5.jpg" class="align-center" src="_images/arduino_test5.jpg" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="_images/arduino_test6.png"><img alt="_images/arduino_test6.png" class="align-center" src="_images/arduino_test6.png" style="width: 500px;" /></a>
+<p>After uploading the <code class="docutils literal notranslate"><span class="pre">4.flashingLight.ino</span></code> file under the path <code class="docutils literal notranslate"><span class="pre">esp-4wd\Arduino\esp_rdp\examples\4.flashingLight</span></code>, the RGB board flashes every 0.5 seconds and changes color every time it flashes.</p>
+</div>
+<div class="section" id="test-the-servo">
+<span id="arduino-test-the-servo"></span><h2>Test the Servo<a class="headerlink" href="#test-the-servo" title="Permalink to this headline">¶</a></h2>
+<p>Complete the wiring according to the diagram.</p>
+<a class="reference internal image-reference" href="_images/arduino_test7.png"><img alt="_images/arduino_test7.png" class="align-center" src="_images/arduino_test7.png" style="width: 600px;" /></a>
+<p>Insert a rocker arm into the servo shaft, then upload the <code class="docutils literal notranslate"><span class="pre">servo.ino</span></code> file under the path <code class="docutils literal notranslate"><span class="pre">esp-4wd\Arduino\esp_rdp\examples\servo</span></code>, the servo will first turn left 30 degrees, then turn right 30 degrees, and finally back to 0 degrees.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the process of assembling the car in the following chapter, the servo needs to be kept at 0 degrees, so please do not upload new codes on the ESP32 RDP until the part with the Servo is assembled.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="hardware_assembly_arduino.html" class="btn btn-neutral float-right" title="Hardware Assembling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="preparations_arduino.html" class="btn btn-neutral float-left" title="Preparations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
