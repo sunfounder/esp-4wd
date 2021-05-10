@@ -1,128 +1,22 @@
 Code Control
 =============
 
-In this chapter, we are provided with method of arduino control. Open ``esp-4wd\Arduino\example``, you can see a total of 7 code examples, you can use these 7
-examples to quickly get started using the ESP-4WD Car.
+In this chapter you will learn to control the ESP-4WD car with Arduino codes.
 
-.. image:: img/arduino_code1.png
-  :width: 200
-  :align: center
+You can copy the code below into the Arduino IDE or directly open the code fileunder the path ``esp-4wd\Micropython\esp_rdp\examples``.
 
-move
------
+1-4 and servo code files have been used in the chapter :ref:`Test the Components with Arduino`, just for simple testing of motor, ultrasonic module, Grayscale Sensor Module, 8-bit RGB board and Servo.
 
-Open the ``1.move.ino`` file with arduino, After running this example, the car will go forward 1s, go backward 1s, turn left 1s, turn right 1s at 30% speed, and finally stop.
+Here, we focus on the three codes of 5-7. 
 
-.. code-block:: c
-
-    #include "ESP32_RDP.h"
-
-    ESP32car car;
-
-    void setup() {
-        car.move("forward", 30);
-        delay(1000);
-        car.move("backward", 30);
-        delay(1000);
-        car.move("left", 30);
-        delay(1000);
-        car.move("right", 30);
-        delay(1000);
-        car.move("stop");
-    }
-
-    void loop() {
-    }
-
-ultrasonic
------------
-
-Run ``2.ultrasonic.ino``, the serial port of arduino will always print the distance value read
-by the ultrasonic module.
-
-.. code-block:: c
-
-    #include "ESP32_RDP.h"
-
-    Ultrasonic ult(13,12);
-    float dis;
-
-    void setup() {
-        Serial.begin(115200);
-    }
-
-    void loop() {
-        dis = ult.read_distance();
-        Serial.printf("distance: %.2f \n",dis);
-        delay(100);
-    }
-
-Click the icon in the upper right corner to open the serial debugging assistant, Set the
-baud rate to 115200.
-
-.. image:: img/arduino_test3-1.png
-  :width: 400
-  :align: center
-
-grayValue
-----------
-
-Run ``3.grayValue.ino``, the serial port of arduino will always print the reading value of the
-grayscale sensor.
-
-.. code-block:: c
-
-    #include "ESP32_RDP.h"
-
-    ESP32car car;
-
-    int grayValue[3] = {0};
-
-    void setup() {
-        Serial.begin(115200);
-    }
-
-    void loop() {
-        car.get_grayscale();
-        for (int i = 0; i < 3; i++) {
-            grayValue[i] = car.adc_value[i];
-        }
-        Serial.printf("grayValue:");
-        Serial.printf(" %d", grayValue[0]);
-        Serial.printf("  %d", grayValue[1]);
-        Serial.printf("  %d\n", grayValue[2]);
-        delay(100);
-    }
-
-flashingLight
---------------
-
-Run ``4.flashingLight.ino``, the RGB light under the car flashes every 0.5 seconds and
-changes color every time it flashes.
-
-.. code-block:: c
-
-    #include "ESP32_RDP.h"
-
-    ESP32car car;
-
-    void setup() {
-    }
-
-    void loop() {
-        car.set_light_color(random(255), random(255), random(255));
-        delay(500);
-        car.set_light_off();
-        delay(500);
-    }
+In addition, the 8 and 9 code files are used in the :ref:`app_control_arduino` chapter, and will not be explained here.
 
 waterfallLight
 ----------------
 
-Run ``5.waterfallLight.ino``, the RGB lights under the car will gradually turn on from the
-first to the twenty-fourth, and then turn off from the end to the middle. After that,
-the RGB lights will turn on from the twenty-fourth to the first, and then turn off from
-the end to the middle.
+After running ``5.waterfallLight.ino``, the LEDs on the 8-bit RGB board under the car will turn on in random colors from the first to the 24th , and then turn off one by one from both ends to the middle.
+
+After that, the RGB lights will turn on in random colors from the 24th to the first, and then turn off one by one from both ends to the middle.
 
 .. code-block:: c
 
@@ -163,31 +57,32 @@ the end to the middle.
         }
     }
 
-The sentence to light up the LED is ``car.set_num_light(i, red, green, blue)`` ; the first
+The statement to light up the LED is ``car.set_num_light(i, red, green, blue)``; the first
 parameter is the number of the light, and the last three parameters are the RGB value.
+
 For example, ``car.set_num_light(4,255,0,0)`` means to make the No. 4 LED light up in
 red.
 
-.. image:: img/arduino_code2.png
-  :width: 300
-  :align: center
+.. image:: img/led_number.jpg
+    :width: 600
+    :align: center
 
 measureSpeed
 -------------
 
 Run ``6.measureSpeed.ino``, the car will move at a random speed, and the 2-ch Photo-
-interrupter Module will detect the speed of the car.
+interrupter module will detect the speed of the car.
 
-The light emitted from the transmitting end of the 2-ch Photo-interrupter Module
-to the receiving end will pass through the Encoding Disk (which has 20 holes). When
-the receiving end does not receive the light, it will send a "0" to the microcontroller,
-otherwise it will send a "1".
+The light emitted from the transmitting end of the 2-ch Photo-interrupter module
+to the receiving end will pass through the Encoding Disk (with 20 holes). When
+the receiving end does not receive the light, it will send a ``0`` to the microcontroller,
+otherwise it will send a ``1``.
 
-This means that when a total of 20 "1"s are detected, the small wheel has turned one
+This means that when a total of 20 ``1`` are detected, the wheel of the car has turned one
 round (a distance of the wheel circumference has been traveled forward).
 
-In the same way, we can detect the frequency of the "1" received by the
-microcontroller and calculate the speed of the trolley in cm/s.
+In the same way, we can detect the frequency of the ``1`` received by the
+microcontroller and calculate the speed of the car in cm/s.
 
 .. code-block:: c
 
@@ -253,8 +148,10 @@ microcontroller and calculate the speed of the trolley in cm/s.
 morePlay
 ---------
 
-Run ``7.morePlay.ino``, this example provides 4 ways to use ESP-4WD Car. You can switch
-between different modes by modifying the value of the mode variable.
+Run ``7.morePlay.ino``, this example provides 4 ways to play ESP-4WD car. You can switch
+between different modes by modifying the value of the **mode** variable.
+
+
 
 .. code-block:: c
 
@@ -285,50 +182,76 @@ between different modes by modifying the value of the mode variable.
         }
     }
 
-Function Introduction
-^^^^^^^^^^^^^^^^^^^^^^^
+Function Introduction of morePlay
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. note::
+
+    For how the following 4 functions implement the corresponding functions, please refer to ``ESP32_RDP.cpp`` and ``ESP32_RDP.h`` under the path ``esp-4wd\Arduino\esp_rdp\src``.
+
 
 **avoid()**
 
-Modify the value of the mode variable to 1 so that the default mode is set to obstacle
-avoidance. ESP-4WD Car will advance at 30% speed and return to the distance state
-according to whether there is an obstacle in front (if there is an obstacle within 10cm,
-return to the distance state 0, if there is an obstacle within 40cm, then return to the
-distance state 1, otherwise it will Return to distance status 2). If it encounters an
-obstacle, it will automatically turn right to avoid collision.
+The default mode(mode=1) is obstacle avoidance. 
+
+``avoid(int ref, int speed)``
+
+* ``ref`` refers to the reference distance value.
+* ``speed`` refers to the forward speed.
+
+ESP-4WD car will move forward at 30% speed and return the distance state according to the obstacle in front. 
+
+* If distance > 40, return the distance state 2, if distance > 10, then return 1, otherwise it will return 0. 
+* If the obstacle distance is greater than 40, the car will move forward, otherwise it will turn right.
 
 .. image:: img/arduino_code3.png
-  :width: 500
-  :align: center
+    :width: 500
+    :align: center
 
 **follow()**
 
-Modify the value of the mode variable to 2 so that the default mode is set to follow.
-ESP-4WD Car will move forward at 30% speed and automatically follow objects within
-40cm in front.
+Modify the value of the mode variable to 2 so that the mode is set to follow.
+
+``follow(int ref, int speed)``
+
+* ``ref`` refers to the reference distance value.
+* ``speed`` refers to the forward speed.
+
+ESP-4WD car will move forward at 30% speed and automatically follow objects within 40cm in front.
 
 .. image:: img/arduino_code4.png
-  :width: 500
-  :align: center
+    :width: 500
+    :align: center
 
-**cliff detection()**
+**is_on_edge()**
 
-Modify the value of the mode variable to 3 so that the default mode is set to cliff
-detection. When ESP-4WD Car detects a cliff (a place where the grayscale sensor's
-detection value is below 110), it will retreat a certain distance.
+Modify the value of the mode variable to 3 so that the mode is set to cliff detection. 
+
+``is_on_edge(int ref)``
+
+* ``ref`` refers to the reference gray value.
+
+When ESP-4WD car detects a cliff (a place where the grayscale sensor's detection value is below 110), it will retreat a certain distance.
 
 .. image:: img/arduino_code5.png
-  :width: 500
-  :align: center
+    :width: 500
+    :align: center
 
 **track_line()**
 
-Modify the value of the mode variable to 4 so that the default mode is set to line
-patrol. The ESP-4WD Car moves along the black line on the white ground (where the
-grayscale sensor detection value is below 400).
+Modify the value of the mode variable to 4 so that the mode is set to track line.
+
+``track_line(int ref, int speed)``
+
+* ``ref`` refers to the reference gray value.
+* ``speed`` refers to the forward speed.
+
+.. note::
+    You can replace ``ref``(400) with another number, which is the threshold between the black line and the white ground read by the grey scale sensor.
+
+The ESP-4WD car moves along the black line on the white ground.
 
 .. image:: img/arduino_code6.png
-  :width: 500
-  :align: center
+    :width: 500
+    :align: center
 
 

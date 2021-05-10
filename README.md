@@ -11,14 +11,25 @@ Quick Links:
 
 <a id="about_this_module"></a>
 ### About ESP-4WD Car:
+The ESP-4WD is an ESP32 RDP based, cool, robot car kit that everyone can have.
 
+Equipped with gray sensor module and ultrasonic module, it can  perform line tracking, cliff detection, follow and obstacle avoidance functions. The RGB boards assembled at the bottom and rear of the car make it the coolest spirit in the dark.
+
+In order to make it easier for you to get started with ESP-4WD car, we provide both Arduino code and Python code. You can choose different language according to your preference.
+
+In addition you can use an APP, the SunFounder Controller, to visually control or access the individual data of the car.
 
 
 <a id="update"></a>
 ### Update:
- - esp-4wd car is the 4WD car that is built based on the ESP32, with the functions, including line following, following, obstacle avoidance, speed testing,  radar testing and use the APP to control the car
+
+2021-4-20：
+- Reorganized the document structure.
+- modify the servo.py.
+
 2020-11-24:
  - New Release
+
 
 ----------------------------------------------
 <a id="about_sunfounder"></a>

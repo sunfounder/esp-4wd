@@ -1,9 +1,9 @@
 Hardware Assembling
 ====================
 
-In this chapter, you will start the hardware assembly of the ESP-4WD Car. Before starting the assembly, make sure your device is in proper operation and calibrate the servo to the 0 degree position.
+In this chapter, you will learn to assemble an ESP-4WD car. 
+Before starting the assembly, please make sure that all components are operating normally and the servo is calibrated to the 0 degree.
 
 .. image:: img/arduino_hardware1-1.png
-  :width: 750
   :align: center
 

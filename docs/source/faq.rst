@@ -1,7 +1,7 @@
 FAQ
 ====
 
-In this chapter, we will answer the questions you may encounter when using ESP-4WD Car.
+In this chapter, we will answer the questions you may encounter when using ESP-4WD car.
 
 **Q1:** When downloading arduino code, the serial port will not be connected for a long time.
 
@@ -35,6 +35,6 @@ following message appears, it means the erasure is complete.
 
 **Q3:** When downloading programs related to controlling the movement of the car, the car moves abnormally.
 
-**A:** This is because the power consumption of the ESP-4WD Car motor is relatively large, and you need to 
+**A:** This is because the power consumption of the ESP-4WD car motor is relatively large, and you need to 
 replace a battery with sufficient power.
 

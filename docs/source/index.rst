@@ -1,22 +1,26 @@
-ESP-4WD Car kit
-===============
+SunFounder ESP-4WD Car Kit
+===========================
 
-About This kit
+About This Kit
 -----------------
 
-ESP-4WD Car is a cost-effectively developmental smart car kit. 
-With the grayscale module, ultrasonic module, Photo-interrupter sensor module, B-bit RGB board, the car can realize obstacle avoidance, line following, object following, cliff detection, 
-velocity measurement, mileage calculation, colorful lights and so on. 
-Besides, the kit comes with operational examples of APP terminal, a convenient controller. 
-In order to make it easier for you to get started with ESP-4WD Car, we provide both Arduino code and Python code. You can choose different language according to your preference.
+The ESP-4WD is an ESP32 RDP based, cool, robot car kit that everyone can have.
+
+Equipped with gray sensor module and ultrasonic module, it can  perform line tracking, cliff detection, follow and obstacle avoidance functions. The RGB boards assembled at the bottom and rear of the car make it the coolest spirit in the dark.
+
+In order to make it easier for you to get started with ESP-4WD car, we provide both Arduino code and Python code. You can choose different language according to your preference.
+
+In addition you can use an APP, the SunFounder Controller, to visually control or access the individual data of the car.
+
 
 .. toctree::
   :maxdepth: 2
 
-  Components List
-  For Arduino User
-  For Python User
-  FAQ
+  introduction_to_esp32_rdp
+  components_list
+  for_arduino_user
+  for_micropython_user
+  faq
 
 Copyright Notice
 ==================
