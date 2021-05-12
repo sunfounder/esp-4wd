@@ -53,7 +53,7 @@ exclude_patterns = []
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_theme = 'sphinx-celery'
+html_theme = 'sphinx_celery'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 latex_engine = 'pdflatex'
