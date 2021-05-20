@@ -53,7 +53,7 @@ exclude_patterns = []
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'furo'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 latex_engine = 'pdflatex'
@@ -61,3 +61,10 @@ latex_use_xindy = False
 latex_elements = {
     'preamble': '\\usepackage[UTF8]{ctex}\n',
 }
+
+html_js_files = [
+    'https://ezblock.cc/readDocFile/topHead.js',
+]
+html_css_files = [
+    'https://ezblock.cc/readDocFile/topHead.css',
+]
