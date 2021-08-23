@@ -21,6 +21,7 @@ In addition you can use an APP, the SunFounder Controller, to visually control o
   for_arduino_user
   for_micropython_user
   faq
+  thank-robot
 
 Copyright Notice
 ==================
